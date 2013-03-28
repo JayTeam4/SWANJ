@@ -228,7 +228,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int Button02=0x7f040016;
-        public static final int action_settings=0x7f040026;
+        public static final int action_settings=0x7f04002b;
         public static final int alignBounds=0x7f040002;
         public static final int alignMargins=0x7f040003;
         public static final int bottom=0x7f040005;
@@ -252,17 +252,22 @@ containing a value of this type.
         public static final int start=0x7f040010;
         public static final int tableRow1=0x7f040019;
         public static final int tableRow2=0x7f040021;
-        public static final int tableRow3=0x7f040022;
-        public static final int tableRow4=0x7f040023;
-        public static final int tableRow5=0x7f040024;
-        public static final int tableRow6=0x7f040025;
+        public static final int tableRow3=0x7f040023;
+        public static final int tableRow4=0x7f040025;
+        public static final int tableRow5=0x7f040027;
+        public static final int tableRow6=0x7f040029;
         public static final int textView1=0x7f040013;
+        public static final int textView10=0x7f040026;
+        public static final int textView11=0x7f040028;
+        public static final int textView12=0x7f04002a;
         public static final int textView2=0x7f040014;
         public static final int textView3=0x7f040017;
         public static final int textView4=0x7f04001d;
         public static final int textView5=0x7f04001e;
         public static final int textView6=0x7f04001f;
         public static final int textView7=0x7f040020;
+        public static final int textView8=0x7f040022;
+        public static final int textView9=0x7f040024;
         public static final int top=0x7f040004;
         public static final int vertical=0x7f040001;
         public static final int view1=0x7f040018;
