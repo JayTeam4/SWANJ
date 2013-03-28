@@ -46,7 +46,11 @@
         android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
+<<<<<<< HEAD
         android:text="Matt was here"
+=======
+        android:text="@string/highScore"
+>>>>>>> branch 'master' of ssh://git@github.com/JayTeam4/SWANJ.git
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="40sp" />
 

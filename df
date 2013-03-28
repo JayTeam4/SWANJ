@@ -1,0 +1,108 @@
+[33mcommit afc65e78035ee770f3ce3b6816def361126db1d2[m
+Author: Jay_Team4 <jbl1102@jagmail.southalabama.com>
+Date:   Thu Mar 28 13:11:16 2013 -0500
+
+    Added "user", "Sequences", "Time", and "Objects" to login screen
+    table layout added
+
+[1mdiff --git a/SimonSays/bin/SimonSays.apk b/SimonSays/bin/SimonSays.apk[m
+[1mindex ce7c90b..7c29385 100644[m
+Binary files a/SimonSays/bin/SimonSays.apk and b/SimonSays/bin/SimonSays.apk differ
+[1mdiff --git a/SimonSays/bin/classes.dex b/SimonSays/bin/classes.dex[m
+[1mindex 2642152..7f82a00 100644[m
+Binary files a/SimonSays/bin/classes.dex and b/SimonSays/bin/classes.dex differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/MainActivity.class b/SimonSays/bin/classes/com/example/simonsays/MainActivity.class[m
+[1mindex 89e2370..f335705 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/MainActivity.class and b/SimonSays/bin/classes/com/example/simonsays/MainActivity.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$attr.class b/SimonSays/bin/classes/com/example/simonsays/R$attr.class[m
+[1mindex 31a4523..832cbb0 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$attr.class and b/SimonSays/bin/classes/com/example/simonsays/R$attr.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$dimen.class b/SimonSays/bin/classes/com/example/simonsays/R$dimen.class[m
+[1mindex 2ff20e4..62e1503 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$dimen.class and b/SimonSays/bin/classes/com/example/simonsays/R$dimen.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$drawable.class b/SimonSays/bin/classes/com/example/simonsays/R$drawable.class[m
+[1mindex 63aff53..d55ebd6 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$drawable.class and b/SimonSays/bin/classes/com/example/simonsays/R$drawable.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$id.class b/SimonSays/bin/classes/com/example/simonsays/R$id.class[m
+[1mindex 033c3e7..b496f5d 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$id.class and b/SimonSays/bin/classes/com/example/simonsays/R$id.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$layout.class b/SimonSays/bin/classes/com/example/simonsays/R$layout.class[m
+[1mindex 3490911..71e54b3 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$layout.class and b/SimonSays/bin/classes/com/example/simonsays/R$layout.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$menu.class b/SimonSays/bin/classes/com/example/simonsays/R$menu.class[m
+[1mindex 3a9c58c..e5f09be 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$menu.class and b/SimonSays/bin/classes/com/example/simonsays/R$menu.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$string.class b/SimonSays/bin/classes/com/example/simonsays/R$string.class[m
+[1mindex d5b284f..995af9f 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$string.class and b/SimonSays/bin/classes/com/example/simonsays/R$string.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R$style.class b/SimonSays/bin/classes/com/example/simonsays/R$style.class[m
+[1mindex 670d990..61ac844 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R$style.class and b/SimonSays/bin/classes/com/example/simonsays/R$style.class differ
+[1mdiff --git a/SimonSays/bin/classes/com/example/simonsays/R.class b/SimonSays/bin/classes/com/example/simonsays/R.class[m
+[1mindex 284912d..5dfb785 100644[m
+Binary files a/SimonSays/bin/classes/com/example/simonsays/R.class and b/SimonSays/bin/classes/com/example/simonsays/R.class differ
+[1mdiff --git a/SimonSays/bin/resources.ap_ b/SimonSays/bin/resources.ap_[m
+[1mindex b2c5af0..2349e6f 100644[m
+Binary files a/SimonSays/bin/resources.ap_ and b/SimonSays/bin/resources.ap_ differ
+[1mdiff --git a/SimonSays/gen/com/example/simonsays/R.java b/SimonSays/gen/com/example/simonsays/R.java[m
+[1mindex 68c2ef8..fb6dfac 100644[m
+[1m--- a/SimonSays/gen/com/example/simonsays/R.java[m
+[1m+++ b/SimonSays/gen/com/example/simonsays/R.java[m
+[36m@@ -9,6 +9,206 @@[m [mpackage com.example.simonsays;[m
+ [m
+ public final class R {[m
+     public static final class attr {[m
+[32m+[m[32m        /**[m[41m [m
+[32m+[m[32m        When set to alignMargins, causes alignment to take place between the outer[m[41m[m
+[32m+[m[32m        boundary of a view, as defined by its margins. When set to alignBounds,[m[41m[m
+[32m+[m[32m        causes alignment to take place between the edges of the view.[m[41m[m
+[32m+[m[32m        The default is alignMargins.[m[41m[m
+[32m+[m[32m        See {@link android.widget.GridLayout#setAlignmentMode(int)}.[m[41m[m
+[32m+[m[41m        [m
+[32m+[m[32m         <p>Must be one of the following constant values.</p>[m[41m[m
+[32m+[m[32m<table>[m[41m[m
+[32m+[m[32m<colgroup align="left" />[m[41m[m
+[32m+[m[32m<colgroup align="left" />[m[41m[m
+[32m+[m[32m<colgroup align="left" />[m[41m[m
+[32m+[m[32m<tr><th>Constant</th><th>Value</th><th>Description</th></tr>[m[41m[m
+[32m+[m[32m<tr><td><code>alignBounds</code></td><td>0</td><td>[m[41m[m
+[32m+[m[32m            Align the bounds of the children.[m[41m[m
+[32m+[m[32m            See {@link android.widget.GridLayout#ALIGN_BOUNDS}.[m[41m[m
+[32m+[m[32m            </td></tr>[m[41m[m
+[32m+[m[32m<tr><td><code>alignMargins</code></td><td>1</td><td>[m[41m[m
+[32m+[m[32m            Align the margins of the children.[m[41m[m
+[32m+[m[32m            See {@link android.widget.GridLayout#ALIGN_MARGINS}.[m[41m[m
+[32m+[m[32m            </td></tr>[m[41m[m
+[32m+[m[32m</table>[m[41m[m
+[32m+[m[32m         */[m[41m[m
+[32m+[m[32m        public static final int alignmentMode=0x7f010004;[m[41m[m
+[32m+[m[32m        /**  The maximum number of columns to create when automatically positioning children.[m[41m [m
+[32m+[m[32m         <p>Must be an integer value, such as "<code>100</code>".[m[41m[m
+[32m+[m[32m<p>This may also be a reference to a resource (in the form[m[41m[m
+[32m+[m[32m"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or[m[41m[m
+[32m+[m[32mtheme attribute (in the form[m[41m[m
+[32m+[m[32m"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")[m[41m[m
+[32m+[m[32mcontaining a value of this type.[m[41m[m
+[32m+[m[32m         */[m[41m[m
+[32m+[m[32m        public static final int columnCount=0x7f010002;[m[41m[m
+[32m+[m[32m        /**[m[41m [m
+[32m+[m[32m        When set to true, forces column boundaries to appear in the same order[m[41m[m
+[32m+[m[32m        as column indices.[m[41m[m
+[32m+[m[32m        The default is true.[m[41m[m
+[32m+[m[32m        See {@link android.widget.GridLayout#setColumnOrderPreserved(boolean)}.[m[41m[m
+[32m+[m[41m        [m
+[32m+[m[32m         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".[m[41m[m
+[32m+[m[32m<p>This may also be a reference to a resource (in the form[m[41m[m
+[32m+[m[32m"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or[m[41m[m
+[32m+[m[32mtheme attribute (in the form[m[41m[m
+[32m+[m[32m"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")[m[41m[m
+[32m+[m[32mcontaining a value of this type.[m[41m[m
+[32m+[m[32m         */[m[41m[m
+[32m+[m[32m        public static final int columnOrderPreserved=0x7f010006;[m[41m[m
+[32m+[m[32m        /**[m[41m [m
+[32m+[m[32m        The column boundary delimiting the left of the group of cells[m[41m[m
+[32m+[m[32m        occupied by this view.[m[41m[m
+[32m+[m[41m        [m
+[32m+[m[32m         <p>Must be an integer value, such as "<code>100</code>".[m[41m[m
+[32m+[m[32m<p>This may also be a reference to a resource (in the form[m[41m[m
+[32m+[m[32m"<code>@[<i>package</i>:]
