@@ -4,5 +4,10 @@
     <string name="app_name">SimonSays</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="enterUsername">Please enter username to begin:</string>
+    <string name="login">login</string>
+    <string name="dontHaveUsername">Don\'t have a username?</string>
+    <string name="newUser">Create New User</string>
+    <string name="highScore">High Scores</string>
 
 </resources>
