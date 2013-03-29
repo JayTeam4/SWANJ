@@ -46,11 +46,7 @@
         android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-<<<<<<< HEAD
-        android:text="Matt was here"
-=======
-        android:text="@string/highScore"
->>>>>>> branch 'master' of ssh://git@github.com/JayTeam4/SWANJ.git
+        android:text="HighScores"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="40sp" />
 
@@ -65,17 +61,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-            <android.support.v7.widget.Space
+            <Space
                 android:id="@+id/space3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <android.support.v7.widget.Space
+            <Space
                 android:id="@+id/space1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <android.support.v7.widget.Space
+            <Space
                 android:id="@+id/space2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
