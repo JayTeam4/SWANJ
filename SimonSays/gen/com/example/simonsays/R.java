@@ -9,7 +9,8 @@ package com.example.simonsays;
 
 public final class R {
     public static final class array {
-        public static final int numOfObjects=0x7f060000;
+        public static final int country_arrays=0x7f060001;
+        public static final int numOfObjects_array=0x7f060000;
     }
     public static final class attr {
     }
@@ -31,7 +32,7 @@ public final class R {
         public static final int RelativeLayout1=0x7f090000;
         public static final int action_settings=0x7f090028;
         public static final int button1=0x7f090002;
-        public static final int button2=0x7f09000e;
+        public static final int button2=0x7f09000f;
         public static final int checkBox1=0x7f090006;
         public static final int checkBox2=0x7f090005;
         public static final int checkBox3=0x7f090004;
@@ -41,14 +42,14 @@ public final class R {
         public static final int checkBox7=0x7f09000b;
         public static final int checkBox8=0x7f09000c;
         public static final int checkBox9=0x7f09000d;
-        public static final int editText1=0x7f090017;
-        public static final int radio0=0x7f090014;
-        public static final int radio1=0x7f090015;
-        public static final int radioGroup1=0x7f090013;
+        public static final int editText1=0x7f09000e;
+        public static final int radio0=0x7f090016;
+        public static final int radio1=0x7f090017;
+        public static final int radioGroup1=0x7f090015;
         public static final int space1=0x7f09001c;
         public static final int space2=0x7f09001d;
         public static final int space3=0x7f09001b;
-        public static final int spinner1=0x7f090016;
+        public static final int spinner1=0x7f090014;
         public static final int tableRow1=0x7f09001a;
         public static final int tableRow2=0x7f09001e;
         public static final int tableRow3=0x7f090020;
@@ -60,11 +61,11 @@ public final class R {
         public static final int textView11=0x7f090025;
         public static final int textView12=0x7f090027;
         public static final int textView2=0x7f090003;
-        public static final int textView3=0x7f090011;
+        public static final int textView3=0x7f090012;
         public static final int textView4=0x7f090008;
-        public static final int textView5=0x7f090010;
-        public static final int textView6=0x7f09000f;
-        public static final int textView7=0x7f090012;
+        public static final int textView5=0x7f090011;
+        public static final int textView6=0x7f090010;
+        public static final int textView7=0x7f090013;
         public static final int textView8=0x7f09001f;
         public static final int textView9=0x7f090021;
         public static final int view1=0x7f090019;
@@ -77,14 +78,17 @@ public final class R {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int dontHaveUsername=0x7f050005;
-        public static final int enterUsername=0x7f050003;
-        public static final int hello_world=0x7f050002;
-        public static final int highScore=0x7f050007;
-        public static final int login=0x7f050004;
-        public static final int newUser=0x7f050006;
+        public static final int action_settings=0x7f050002;
+        public static final int app_name=0x7f050001;
+        public static final int country_prompt=0x7f05000a;
+        public static final int dontHaveUsername=0x7f050006;
+        public static final int editText2=0x7f050000;
+        public static final int enterUsername=0x7f050004;
+        public static final int hello_world=0x7f050003;
+        public static final int highScore=0x7f050008;
+        public static final int login=0x7f050005;
+        public static final int newUser=0x7f050007;
+        public static final int numOfObject_prompt=0x7f050009;
     }
     public static final class style {
         /** 

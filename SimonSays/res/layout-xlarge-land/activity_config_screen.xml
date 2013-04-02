@@ -98,7 +98,7 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/button1"
         android:layout_marginTop="51dp"
-        android:text="Medium Text"
+        android:text="@string/editText1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
@@ -171,33 +171,37 @@
         android:text="Number of Objects"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/checkBox9"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_marginLeft="29dp" >
-        <RadioButton
-        android:id="@+id/radio0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="true"
-        android:text="Diamond" />
-
-  	    <RadioButton
-        android:id="@+id/radio1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Grid" />
-    </RadioGroup>
-
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView7"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:entries="@array/numOfObjects_array"
+        android:overScrollMode="ifContentScrolls"
+        android:prompt="@array/numOfObjects_array"
+        android:scrollbars="vertical" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBox6"
+        android:layout_alignLeft="@+id/textView5" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Diamond" />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grid" />
+    </RadioGroup>
 
 </RelativeLayout>
 

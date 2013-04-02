@@ -17,14 +17,24 @@ public class ConfigActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_screen);
         
-        Spinner spinNumOfObjects = (Spinner)findViewById(R.id.spinner1);
-        // Application of the Array to the Spinner
-           ArrayAdapter<String> spinAdapterNumOfObjects = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,
-                   R.array.numOfObjects);
-           
-           spinAdapterNumOfObjects.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down vieww
-           spinNumOfObjects.setAdapter(spinAdapterNumOfObjects);
+        
+      //  addItemsOnSpinner1();
+
     }
+
+//    public void addItemsOnSpinner1()
+//    {
+//        Spinner spinNumOfObjects = (Spinner)findViewById(R.id.spinner1);
+////        List<String> list = new ArrayList<String>();
+////        list.add("list 1");
+////        list.add("list 2");
+////        list.add("list 3");
+//        ArrayAdapter<String> spinAdapterNumOfObjects = new ArrayAdapter<String>(this,
+//            android.R.layout.simple_spinner_item, R.array.numOfObjects_array);
+//        spinAdapterNumOfObjects.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinNumOfObjects.setAdapter(spinAdapterNumOfObjects);
+//        
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
