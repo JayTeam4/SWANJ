@@ -132,27 +132,6 @@
         android:text="Layouts"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_marginLeft="84dp"
-        android:layout_toRightOf="@+id/button1"
-        android:text="Colors"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/checkBox4"
-        android:layout_marginBottom="53dp"
-        android:layout_toLeftOf="@+id/button2"
-        android:text="Shapes"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <CheckBox
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
@@ -202,6 +181,37 @@
             android:layout_height="wrap_content"
             android:text="Grid" />
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="31dp"
+        android:entries="@array/sizeOfObjects_array"
+        android:prompt="@string/sizeOfObjects_prompt" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:text="Colors"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinner1"
+        android:layout_alignRight="@+id/button2"
+        android:layout_marginBottom="37dp"
+        android:layout_marginRight="29dp"
+        android:text="Shapes"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
 
