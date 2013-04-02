@@ -16,6 +16,14 @@ public class ConfigActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_screen);
+        
+        Spinner spinNumOfObjects = (Spinner)findViewById(R.id.spinner1);
+        // Application of the Array to the Spinner
+           ArrayAdapter<String> spinAdapterNumOfObjects = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,
+                   R.array.numOfObjects);
+           
+           spinAdapterNumOfObjects.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down vieww
+           spinNumOfObjects.setAdapter(spinAdapterNumOfObjects);
     }
 
     @Override
@@ -27,10 +35,8 @@ public class ConfigActivity extends Activity
     }
     
     Button button;
+
     
-    Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-    Integer[] numberOfObjects = new Integer[]{4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
-    ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item, numberOfObjects);
 
 
 }
