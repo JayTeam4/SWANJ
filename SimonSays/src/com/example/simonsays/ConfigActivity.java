@@ -3,7 +3,9 @@ package com.example.simonsays;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 
 public class ConfigActivity extends Activity
@@ -26,7 +28,15 @@ public class ConfigActivity extends Activity
     
     Button button;
     
+    Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+    Integer[] numberOfObjects = new Integer[]{4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
+    ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item, numberOfObjects);
 
 
 }
+
+
+
+
+
 

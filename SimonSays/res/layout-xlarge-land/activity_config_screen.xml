@@ -191,16 +191,16 @@
         android:layout_height="wrap_content"
         android:text="Grid" />
     </RadioGroup>
-
-
-
-<!--     <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/checkBox1"
-        android:layout_alignLeft="@+id/textView7"
-        android:entries="@array/numOfObjects"
-        tools:listitem="@android:layout/simple_spinner_dropdown_item" /> -->
+    
+	<Spinner
+	    android:id="@+id/spinner1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/checkBox1"
+	    android:layout_alignLeft="@+id/textView7"
+	    tools:listitem="@android:layout/simple_spinner_dropdown_item" />
 
 </RelativeLayout>
+
+
+
