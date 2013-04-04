@@ -2,10 +2,14 @@ package com.example.simonsays;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.view.Menu;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class ConfigActivity extends Activity
@@ -16,25 +20,11 @@ public class ConfigActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_screen);
+        TextView tvUserName = (TextView) findViewById(R.id.textView2);
+        tvUserName.setText(getIntent().getExtras().getString("user"));
         
-        
-      //  addItemsOnSpinner1();
-
+        logoutListener();
     }
-
-//    public void addItemsOnSpinner1()
-//    {
-//        Spinner spinNumOfObjects = (Spinner)findViewById(R.id.spinner1);
-////        List<String> list = new ArrayList<String>();
-////        list.add("list 1");
-////        list.add("list 2");
-////        list.add("list 3");
-//        ArrayAdapter<String> spinAdapterNumOfObjects = new ArrayAdapter<String>(this,
-//            android.R.layout.simple_spinner_item, R.array.numOfObjects_array);
-//        spinAdapterNumOfObjects.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinNumOfObjects.setAdapter(spinAdapterNumOfObjects);
-//        
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -44,11 +34,29 @@ public class ConfigActivity extends Activity
         return true;
     }
     
-    Button button;
-
+    public void logoutListener() 
+    {
+        Button button;
+        
+        final EditText  edUsername  = (EditText) findViewById(R.id.editText1);
+        final Context context = this;
+        button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(new OnClickListener() 
+        {
+            @Override
+            public void onClick(View arg0) 
+            {
+                String userName = edUsername.getText().toString();
+                if(userName.length() != 0)
+                {
+                    // this will move from screen to screen
+                    Intent intent = new Intent(context, MainActivity.class);
+                    startActivity(intent);                
+                }                           
+            }
+        });
+    }// end of logoutListener
     
-
-
 }
 
 
