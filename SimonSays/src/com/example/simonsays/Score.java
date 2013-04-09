@@ -16,7 +16,6 @@ public class Score
         numberOfRounds = 0;
         time = 0;
         totalObjects = totObjects;
-      
     }
     
     public int getNumberOfRounds()
