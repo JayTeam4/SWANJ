@@ -16,5 +16,11 @@ package com.example.simonsays;
  */
 public class Player
 {
+    //private
     private String playerName;
+    //public
+    public String getName()
+    {
+        return playerName;
+    }
 }

@@ -14,7 +14,12 @@ package com.example.simonsays;
  * @author Jay Lewis
  *
  */
-public interface Layout
+abstract class Layout
 {
+    int numberOfObjects;
     
+    int getNumberOfObjects()
+    {
+        return this.numberOfObjects;
+    }
 }

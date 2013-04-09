@@ -19,6 +19,22 @@ public class Score
     private int numberOfRounds;
     private int numberOfObjectsSelected;
     private long time;
+    
+    public int getNumberOfRounds()
+    {
+        return numberOfRounds;
+    }
+    
+    public int getNumberOfObjectsSelected()
+    {
+        return numberOfObjectsSelected;
+    }
+    
+    public long getTime()
+    {
+        return time;
+    }
+        
 // something like this can be used to track time for executed method
 //    long startTime = System.nanoTime();
 //    methodToTime();

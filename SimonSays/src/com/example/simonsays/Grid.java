@@ -14,7 +14,7 @@ package com.example.simonsays;
  * @author Jay Lewis
  *
  */
-public class Grid implements Layout
+public class Grid extends Layout
 {
 
 }

@@ -14,7 +14,7 @@ package com.example.simonsays;
  * @author Jay Lewis
  *
  */
-public class Diamond implements Layout
+public class Diamond extends Layout
 {
 
 }
