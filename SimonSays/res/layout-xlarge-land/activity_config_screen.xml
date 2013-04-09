@@ -215,22 +215,6 @@
         android:text="Shapes"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/button2"
-        android:layout_alignLeft="@+id/textView4"
-        android:src="@drawable/ic_cheetah" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/button2"
-        android:layout_toLeftOf="@+id/textView5"
-        android:src="@drawable/ic_simon_says" />
-
 </RelativeLayout>
 
 

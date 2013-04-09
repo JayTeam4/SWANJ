@@ -62,7 +62,6 @@ public class MainActivity extends Activity
                 }  
                 else
                 {
-                   
                     if  (editText.getText().toString().trim().equals(""))
                     {
                        editText.setError("Must enter something as a username!");
