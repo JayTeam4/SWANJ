@@ -17,4 +17,4 @@ package com.example.simonsays;
 public class Diamond extends Layout
 {
 
-}
+}//end of class

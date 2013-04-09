@@ -23,20 +23,20 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loginListener(); 
-    }
+    }//end of onCreate
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }//end of onCreateOptionsMenu
     public void editTextUserNameListener()
     {
       
         
   
-    }
+    }//end of editTextUserNameListener
     public void loginListener() 
     {
         Button button;
@@ -65,13 +65,13 @@ public class MainActivity extends Activity
                     if  (editText.getText().toString().trim().equals(""))
                     {
                        editText.setError("Must enter something as a username!");
-                    }
+                    }//end of if
                     else
                     {
                         editText.setError(null);
-                    }    
-                }
-            }
+                    }//end of else
+                }//end of else
+            }//end of on click
         });
     }// end of loginListener
 }//end of class

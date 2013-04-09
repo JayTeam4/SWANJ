@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="editText1" type="@id/editText1"/>
+    <string name="editText1" type="@id/editText1" />
     <string name="app_name">SimonSays</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
@@ -10,8 +10,8 @@
     <string name="dontHaveUsername">Don\'t have a username?</string>
     <string name="newUser">Create New User</string>
     <string name="highScore">High Scores</string>
-    
-	<string name="numOfObject_prompt">Choose Number of Objects</string>
+    <string name="numOfObject_prompt">Choose Number of Objects</string>
+
     <string-array name="numOfObjects_array">
         <item>"4"</item>
         <item>"5"</item>
@@ -36,14 +36,15 @@
         <item>"24"</item>
         <item>"25"</item>
     </string-array>
+
     <string name="sizeOfObjects_prompt">Choose Size of Objects</string>
-	 <string-array name="sizeOfObjects_array">
-	     <item>Small</item>
-	     <item>Medium</item>
-	     <item>Large</item>
-	 </string-array>
-	    
-    
-        
-        
+
+    <string-array name="sizeOfObjects_array">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string name="title_activity_play">PlayActivity</string>
+
 </resources>

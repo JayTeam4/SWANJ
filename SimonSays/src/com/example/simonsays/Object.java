@@ -17,16 +17,16 @@ package com.example.simonsays;
  */
 public class Object
 {
-    private String shape;
-    private String color;
+    private String[] shape;
+    private String[] color;
     private String size;
     
-    public String getShape()
+    public String[] getShape()
     {
         return shape;
     }
     
-    public String getColor()
+    public String[] getColor()
     {
         return color;
     }

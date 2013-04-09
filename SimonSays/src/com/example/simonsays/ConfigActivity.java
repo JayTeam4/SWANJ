@@ -24,7 +24,8 @@ public class ConfigActivity extends Activity
         tvUserName.setText(getIntent().getExtras().getString("user"));
         
         logoutListener();
-    }
+        playListener();
+    }//end of onCreate
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -32,7 +33,7 @@ public class ConfigActivity extends Activity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }//end of onCreateOptionsMenu
     
     public void logoutListener() 
     {
@@ -52,12 +53,27 @@ public class ConfigActivity extends Activity
                     // this will move from screen to screen
                     Intent intent = new Intent(context, MainActivity.class);
                     startActivity(intent);                
-                }                           
-            }
-        });
+                }//end of if                        
+            }//end of onCLick
+        });//end of setOnClickListener
     }// end of logoutListener
-    
-}
+    public void playListener()
+    {
+        Button button;
+       
+        final Context context = this;
+        button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new OnClickListener() 
+        {
+            @Override
+            public void onClick(View arg0) 
+            {
+                Intent intent = new Intent(context, PlayActivity.class);
+                startActivity(intent);
+            }//end of onCLick
+        });//end of setOnClickListener
+    }
+}//end of class
 
 
 

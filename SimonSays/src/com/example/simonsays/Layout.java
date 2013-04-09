@@ -21,5 +21,5 @@ abstract class Layout
     int getNumberOfObjects()
     {
         return this.numberOfObjects;
-    }
-}
+    }//end of getNumberOfObjects
+}//end of class

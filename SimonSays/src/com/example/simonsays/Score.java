@@ -23,17 +23,17 @@ public class Score
     public int getNumberOfRounds()
     {
         return numberOfRounds;
-    }
+    }//end of getNumberOfRounds
     
     public int getNumberOfObjectsSelected()
     {
         return numberOfObjectsSelected;
-    }
+    }//end of getNumberOfObjectsSelected
     
     public long getTime()
     {
         return time;
-    }
+    }//end of getTime
         
 // something like this can be used to track time for executed method
 //    long startTime = System.nanoTime();
@@ -41,4 +41,4 @@ public class Score
 //    long endTime = System.nanoTime();
 //
 //    long duration = endTime - startTime;
-}
+}//end of class
