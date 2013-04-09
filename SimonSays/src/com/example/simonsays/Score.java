@@ -1,13 +1,4 @@
-//  Author         :  Jay Lewis
-//  Student Number :  J00270628
-//  Date Submitted :  **/**/****
-//  File           :  *file*
-//  Instructor     :  Dawn McKinney
-//  Class          :  CIS 121 (6:00 Pm)
-//  Identification :  *name*
-//  Purpose        :  
-//                    
-//            	 
+         	 
 package com.example.simonsays;
 
 /**
@@ -17,28 +8,39 @@ package com.example.simonsays;
 public class Score
 {
     private int numberOfRounds;
-    private int numberOfObjectsSelected;
+    private int totalObjects;
     private long time;
+    
+    Score(int totObjects)
+    {
+        numberOfRounds = 0;
+        time = 0;
+        totalObjects = totObjects;
+      
+    }
     
     public int getNumberOfRounds()
     {
         return numberOfRounds;
     }//end of getNumberOfRounds
-    
-    public int getNumberOfObjectsSelected()
-    {
-        return numberOfObjectsSelected;
-    }//end of getNumberOfObjectsSelected
-    
     public long getTime()
     {
         return time;
     }//end of getTime
-        
+    public void addOneRound()
+    {
+       numberOfRounds++;
+    }
 // something like this can be used to track time for executed method
 //    long startTime = System.nanoTime();
 //    methodToTime();
 //    long endTime = System.nanoTime();
 //
 //    long duration = endTime - startTime;
+
+    public void addTime(long timeElapsed)
+    {
+       time += timeElapsed;
+        
+    }
 }//end of class

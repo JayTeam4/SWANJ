@@ -1,13 +1,4 @@
-//  Author         :  Jay Lewis
-//  Student Number :  J00270628
-//  Date Submitted :  **/**/****
-//  File           :  *file*
-//  Instructor     :  Dawn McKinney
-//  Class          :  CIS 121 (6:00 Pm)
-//  Identification :  *name*
-//  Purpose        :  
-//                    
-//            	 
+        	 
 package com.example.simonsays;
 
 /**
@@ -18,9 +9,23 @@ public class Player
 {
     //private
     private String playerName;
+    private Score playerScore;
     //public
     public String getName()
     {
         return playerName;
     }//end of getName
+    Player(String name, Score myScore)
+    {
+        playerName = name;    
+        playerScore = myScore;
+    }
+    public void updateScore(long time)
+    {
+        playerScore.addOneRound();
+        playerScore.addTime(time);
+    }
+    
+    
+    
 }//end of Player
