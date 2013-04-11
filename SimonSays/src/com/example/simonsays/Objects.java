@@ -8,16 +8,25 @@ package com.example.simonsays;
  */
 public class Objects
 {
-    private String[] shape;
-    private String[] color;
+    private String shape;
+    private String color;
     private String size;
+    private int number;
     
-    public String[] getShape()
+    Objects(String sh, String co, String si, int num)
+    {
+    	shape = sh;
+    	color = co;
+    	size = si;
+    	number = num;
+    }
+    
+    public String getShape()
     {
         return shape;
     }
     
-    public String[] getColor()
+    public String getColor()
     {
         return color;
     }
