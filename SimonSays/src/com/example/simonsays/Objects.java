@@ -36,4 +36,9 @@ public class Objects
         return size;
     }
     
+    public int getNum()
+    {
+    	return number;
+    }
+    
 }

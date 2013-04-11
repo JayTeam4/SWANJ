@@ -1,5 +1,8 @@
 package com.example.simonsays;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -21,7 +24,7 @@ public class ConfigActivity extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
-    {
+    {        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_screen);
         TextView tvUserName = (TextView) findViewById(R.id.textView2);
@@ -52,6 +55,7 @@ public class ConfigActivity extends Activity
             public void onClick(View arg0) 
             {
                 String userName = edUsername.getText().toString();
+                
                 if(userName.length() != 0)
                 {
                     // this will move from screen to screen

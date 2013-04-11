@@ -24,13 +24,14 @@ public class AI {
 	public void addNewShapeToList()
 	{
 		Random r = new Random();
-		int i = r.nextInt() % allObjects.size();
+		int i = r.nextInt(allObjects.size());
 		currentlist.add(allObjects.get(i));
 	}
 	
-	public void getListAt(int i)
+	public Objects getListAt(int i)
 	{
-		currentlist.get(i);
+		return currentlist.get(i);
 	}
+	
 
 }
