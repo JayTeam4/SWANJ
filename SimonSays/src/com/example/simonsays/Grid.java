@@ -7,5 +7,13 @@ package com.example.simonsays;
  */
 public class Grid extends Layout
 {
-
+    
+    Grid()
+    {
+        
+    }
+    
+    
+    
+    
 }//end of class
