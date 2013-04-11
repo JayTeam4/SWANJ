@@ -1,6 +1,9 @@
 package com.example.simonsays;
 
+import com.example.simonsays.R.layout;
+
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
@@ -51,10 +54,13 @@ public class PlayActivity extends Activity
         //getIntent().getExtras().getString("orange");
         //getIntent().getExtras().getString("yellow");
         //getIntent().getExtras().getString("layout");
-        //getIntent().getExtras().getString("objectSize");
+        //getIntent().getExtras().getString("objectSize");             
+        
+        
         int numOfObjects = Integer.parseInt(getIntent().getExtras().getString("numOfObjects"));
         Score score = new Score(numOfObjects);
         Player player = new Player(getIntent().getExtras().getString("user"), score);
+        
         
         if(getIntent().getExtras().getString("layout") == "grid")
         {
@@ -71,30 +77,46 @@ public class PlayActivity extends Activity
         
         
         tableLay = (TableLayout)findViewById(R.id.tableLayout1);  
-        final ImageButton iButton = new ImageButton(this);
+        final ImageButton button1 = new ImageButton(this);      
+        button1.setImageResource(R.drawable.blue_circle);
+        button1.setBackgroundColor(Color.WHITE);
         
-        iButton.setImageResource(R.drawable.blue_circle);
-        iButton.setBackgroundColor(Color.CYAN);
+        final ImageButton button2 = new ImageButton(this);      
+        button2.setImageResource(R.drawable.red_triangle);
+        button2.setBackgroundColor(Color.WHITE);
         
-        TableRow tr1 = (TableRow)findViewById(R.id.tableRow1);
+        final ImageButton button3 = new ImageButton(this);      
+        button3.setImageResource(R.drawable.green_circle);
+        button3.setBackgroundColor(Color.WHITE);
         
-        tr1.addView(iButton);
-        
-        iButton.setOnClickListener(new OnClickListener()
-        {
-            
-            @Override
-            public void onClick(View v)
-            {
-               iButton.setImageResource(R.drawable.black_circle);
+        final ImageButton button4 = new ImageButton(this);      
+        button4.setImageResource(R.drawable.yellow_triangle);
+        button4.setBackgroundColor(Color.WHITE);      
                 
-            }
-        });
-        
-        //grid 
+        //diamond 4 objects = 3x3
+        // 5 -> 8 = 5x5
+        // 9 -> 12 = 7x7
+        // 13 -> 16 = 9x9
+        // 17 -> 20 = 11x11
+        // 21 -> 24 = 13x13
+        // 25 = special case 13x13 1 in middle
+       
+        //grid                 
         if(numOfObjects == 4)
         {
-
+               TableRow tr1 = new TableRow(this);   
+               tr1.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+               tr1.addView(button1); 
+               tr1.addView(button2);
+               
+               TableRow tr2 = new TableRow(this);   
+               tr2.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+               tr2.addView(button3); 
+               tr2.addView(button4);
+               
+               tableLay.addView(tr1);
+               tableLay.addView(tr2);
+               
         }
         else if(numOfObjects >= 5 || numOfObjects <= 9 )
         {
@@ -108,30 +130,30 @@ public class PlayActivity extends Activity
         {
                     
         }
-        //diamond 4 objects = 3x3
-        // 5 -> 8 = 5x5
-        // 9 -> 12 = 7x7
-        // 13 -> 16 = 9x9
-        // 17 -> 20 = 11x11
-        // 21 -> 24 = 13x13
-        // 25 = special case 13x13 1 in middle
-        
-        
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, numbers);
 
-// 
-//        gridView.setOnItemClickListener(new OnItemClickListener() 
-//        {
-//            public void onItemClick(AdapterView<?> parent, View v,
-//                int position, long id) 
-//                {
-//                    Toast.makeText(getApplicationContext(),
-//                            ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
-//                }
-//        });
- 
-    }
+        button1.setOnClickListener(new OnClickListener()
+        {
+            
+            @Override
+            public void onClick(View v) 
+            {
+                //next line is the color / shape you want to change to immediatly after click
+                button1.setImageResource(R.drawable.black_circle);
+                // SLEEP 2 SECONDS HERE ...
+                Handler handler = new Handler(); 
+                handler.postDelayed(new Runnable() 
+                { 
+                     public void run() 
+                     { 
+                         //this is what the image will return to after the seconds has executed
+                         button1.setImageResource(R.drawable.blue_circle); 
+                     } 
+                }, 500); 
+            }
+        }        
+                );     
+        
+    }// end of onCreate
     
 
     @Override
