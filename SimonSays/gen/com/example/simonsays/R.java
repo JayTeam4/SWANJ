@@ -25,14 +25,39 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_cheetah=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int ic_simon_says=0x7f020002;
+        public static final int black_circle=0x7f020000;
+        public static final int black_square=0x7f020001;
+        public static final int black_triangle=0x7f020002;
+        public static final int blank=0x7f020003;
+        public static final int blue_circle=0x7f020004;
+        public static final int blue_square=0x7f020005;
+        public static final int blue_triangle=0x7f020006;
+        public static final int circle=0x7f020007;
+        public static final int green_circle=0x7f020008;
+        public static final int green_square=0x7f020009;
+        public static final int green_triangle=0x7f02000a;
+        public static final int ic_cheetah=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int ic_simon_says=0x7f02000d;
+        public static final int orange_circle=0x7f02000e;
+        public static final int orange_square=0x7f02000f;
+        public static final int orange_triangle=0x7f020010;
+        public static final int purple_circle=0x7f020011;
+        public static final int purple_square=0x7f020012;
+        public static final int purple_triangle=0x7f020013;
+        public static final int red_circle=0x7f020014;
+        public static final int red_square=0x7f020015;
+        public static final int red_triangle=0x7f020016;
+        public static final int square=0x7f020017;
+        public static final int triangle=0x7f020018;
+        public static final int yellow_circle=0x7f020019;
+        public static final int yellow_square=0x7f02001a;
+        public static final int yellow_triangle=0x7f02001b;
     }
     public static final class id {
         public static final int Button02=0x7f090019;
         public static final int RelativeLayout1=0x7f090000;
-        public static final int action_settings=0x7f090029;
+        public static final int action_settings=0x7f090031;
         public static final int button1=0x7f090002;
         public static final int button2=0x7f09000e;
         public static final int checkBox1=0x7f090006;
@@ -53,12 +78,20 @@ public final class R {
         public static final int space3=0x7f09001c;
         public static final int spinner1=0x7f090013;
         public static final int spinner2=0x7f090017;
+        public static final int tableLayout1=0x7f090029;
         public static final int tableRow1=0x7f09001b;
+        public static final int tableRow10=0x7f09002d;
+        public static final int tableRow11=0x7f09002e;
+        public static final int tableRow12=0x7f09002f;
+        public static final int tableRow13=0x7f090030;
         public static final int tableRow2=0x7f09001f;
         public static final int tableRow3=0x7f090021;
         public static final int tableRow4=0x7f090023;
         public static final int tableRow5=0x7f090025;
         public static final int tableRow6=0x7f090027;
+        public static final int tableRow7=0x7f09002a;
+        public static final int tableRow8=0x7f09002b;
+        public static final int tableRow9=0x7f09002c;
         public static final int textView1=0x7f090001;
         public static final int textView10=0x7f090024;
         public static final int textView11=0x7f090026;

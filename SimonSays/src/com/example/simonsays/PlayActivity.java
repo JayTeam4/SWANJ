@@ -2,14 +2,20 @@ package com.example.simonsays;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
 import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.TableLayout.LayoutParams;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,10 +31,6 @@ public class PlayActivity extends Activity
         "U", "V", "W", "X", "Y", "Z",
         "AA","BB","CC","DD","EE" };
     
-//    static final int[] numbers = new int[]
-//            {
-//            1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25
-//            };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,36 +56,65 @@ public class PlayActivity extends Activity
         Score score = new Score(numOfObjects);
         Player player = new Player(getIntent().getExtras().getString("user"), score);
         
+        if(getIntent().getExtras().getString("layout") == "grid")
+        {
+            Grid g = new Grid();
+        }
+        if(getIntent().getExtras().getString("layout") == "diamond")
+        {
+            Diamond d = new Diamond();
+        }
 //        4 = 2x2
 //        5 -> 9 = 3x3
 //        10 -> 16 = 4x4
 //        17 -> 25 = 5x5
         
         
+        tableLay = (TableLayout)findViewById(R.id.tableLayout1);  
+        final ImageButton iButton = new ImageButton(this);
         
-       
+        iButton.setImageResource(R.drawable.blue_circle);
+        iButton.setBackgroundColor(Color.CYAN);
         
-//        if(numOfObjects == 4)
-//        {
-//            tableLay.setc.setRowCount(2);
-//            gridlay.setColumnCount(2);
-//        }
-//        else if(numOfObjects >= 5 || numOfObjects <= 9 )
-//        {
-//            gridlay.setRowCount(3);
-//            gridlay.setColumnCount(3);
-//           
-//        }
-//        else if(numOfObjects >= 10 || numOfObjects <= 16)
-//        {
-//            gridlay.setRowCount(4);
-//            gridlay.setColumnCount(4);           
-//        }
-//        else
-//        {
-//            gridlay.setRowCount(5);
-//            gridlay.setColumnCount(5);          
-//        }
+        TableRow tr1 = (TableRow)findViewById(R.id.tableRow1);
+        
+        tr1.addView(iButton);
+        
+        iButton.setOnClickListener(new OnClickListener()
+        {
+            
+            @Override
+            public void onClick(View v)
+            {
+               iButton.setImageResource(R.drawable.black_circle);
+                
+            }
+        });
+        
+        //grid 
+        if(numOfObjects == 4)
+        {
+
+        }
+        else if(numOfObjects >= 5 || numOfObjects <= 9 )
+        {
+           
+        }
+        else if(numOfObjects >= 10 || numOfObjects <= 16)
+        {
+                  
+        }
+        else
+        {
+                    
+        }
+        //diamond 4 objects = 3x3
+        // 5 -> 8 = 5x5
+        // 9 -> 12 = 7x7
+        // 13 -> 16 = 9x9
+        // 17 -> 20 = 11x11
+        // 21 -> 24 = 13x13
+        // 25 = special case 13x13 1 in middle
         
         
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
