@@ -1,7 +1,10 @@
 package com.example.simonsays;
 
-import com.example.simonsays.R.layout;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import com.example.simonsays.R.layout;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
@@ -25,6 +28,7 @@ import android.widget.Toast;
 public class PlayActivity extends Activity
 {
     TableLayout tableLay;
+    private List<Objects> pickedobjects = new ArrayList<Objects>();
     
     static final String[] numbers = new String[] { 
         "A", "B", "C", "D", "E",
@@ -58,9 +62,25 @@ public class PlayActivity extends Activity
         
         
         int numOfObjects = Integer.parseInt(getIntent().getExtras().getString("numOfObjects"));
+        String[] color = getColors();
+        String size = getIntent().getExtras().getString("objectSized");
+        String[] shape = getShapes();
+        populateList(numOfObjects, color, size, shape);
         Score score = new Score(numOfObjects);
         Player player = new Player(getIntent().getExtras().getString("user"), score);
+        /*List<Objects> allObject = new ArrayList<Objects>();
+        allObject.add(new Objects("square", "Red", "Medium", 0));
+        allObject.add(new Objects("circle", "Green", "Medium", 1));
+        allObject.add(new Objects("square", "Black", "Large", 2));
+        allObject.add(new Objects("square", "Orange", "Small", 3));
         
+        */AI testAI = new AI(pickedobjects);
+        
+        //TextView;
+        
+        testAI.addNewShapeToList();
+        testAI.addNewShapeToList();
+        testAI.addNewShapeToList();      
         
         if(getIntent().getExtras().getString("layout") == "grid")
         {
@@ -162,6 +182,127 @@ public class PlayActivity extends Activity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.play, menu);
         return true;
+    }
+    
+    private String[] getColors()
+    {
+    	String[] result;
+    	int size = 0;
+    	int currentIndex = 0;
+    	if(getIntent().getExtras().getString("red") != null)
+    	{
+    		size++;
+    	}
+        if(getIntent().getExtras().getString("blue") != null)
+        {
+        	size++;
+        }
+        if(getIntent().getExtras().getString("green") != null);
+        {
+        	size++;
+        }
+        if(getIntent().getExtras().getString("purple") != null)
+        {
+        	size++;
+        }
+        if(getIntent().getExtras().getString("orange") != null)
+        {
+        	size++;
+        }
+        if(getIntent().getExtras().getString("yellow") != null)
+        {
+        	size++;
+        }
+        
+        result = new String[size];
+        
+        if(getIntent().getExtras().getString("red") != null)
+    	{
+        	result[currentIndex] = "red";
+    		currentIndex++;
+    	}
+        if(getIntent().getExtras().getString("blue") != null)
+        {
+        	result[currentIndex] = "blue";
+        	currentIndex++;
+        }
+        if(getIntent().getExtras().getString("green") != null);
+        {
+        	result[currentIndex] = "green";
+        	currentIndex++;
+        }
+        if(getIntent().getExtras().getString("purple") != null)
+        {
+        	result[currentIndex] = "purple";
+        	currentIndex++;
+        }
+        if(getIntent().getExtras().getString("orange") != null)
+        {
+        	result[currentIndex] = "orange";
+        	currentIndex++;
+        }
+        if(getIntent().getExtras().getString("yellow") != null)
+        {
+        	result[currentIndex] = "yellow";
+        	currentIndex++;
+        }
+        
+    	return result;
+    }
+    
+    private String[] getShapes()
+    {
+    	String[] result;
+    	int size = 0;
+    	int currentIndex = 0;
+    	if(getIntent().getExtras().getString("square") != null)
+    	{
+    		size++;
+    	}
+    	
+    	if(getIntent().getExtras().getString("triangle") != null)
+    	{
+    		size++;
+    	}
+    	
+    	if(getIntent().getExtras().getString("circle") != null)
+    	{
+    		size++;
+    	}
+    	
+    	result = new String[size];
+        
+        if(getIntent().getExtras().getString("square") != null)
+    	{
+        	result[currentIndex] = "square";
+    		currentIndex++;
+    	}
+        
+        if(getIntent().getExtras().getString("triangle") != null)
+    	{
+        	result[currentIndex] = "triangle";
+    		currentIndex++;
+    	}
+        
+        if(getIntent().getExtras().getString("circle") != null)
+    	{
+        	result[currentIndex] = "circle";
+    		currentIndex++;
+    	}
+        
+        return result;
+    }
+    
+    public void populateList(int num, String[] color, String size, String[] shape)
+    {
+    	Random r = new Random();
+    	for(int i = 0; i<num; i++)
+    	{
+    		int j = r.nextInt(color.length);
+    		int k = r.nextInt(shape.length);
+    		pickedobjects.add(new Objects(size, color[j], shape[k], i));
+    	}
+    	
     }
 
 }
