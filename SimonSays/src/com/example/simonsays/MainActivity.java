@@ -51,8 +51,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View arg0) 
             {
-                String userName = edUsername.getText().toString();
-                
+                String userName = edUsername.getText().toString();              
                 final EditText editText=(EditText) findViewById(R.id.editText1);
                 
                 if(userName.length() != 0)
