@@ -68,16 +68,10 @@ public class PlayActivity extends Activity
         String[] color = getColors();
         String size = getIntent().getExtras().getString("objectSize");
         String[] shape = getShapes();
-        pickedobjects = populateList(numOfObjects, color, size, shape);
+        populateList(numOfObjects, color, size, shape);
         Score score = new Score(numOfObjects);
         Player player = new Player(getIntent().getExtras().getString("user"), score);
-        /*List<Objects> allObject = new ArrayList<Objects>();
-        allObject.add(new Objects("square", "Red", "Medium", 0));
-        allObject.add(new Objects("circle", "Green", "Medium", 1));
-        allObject.add(new Objects("square", "Black", "Large", 2));
-        allObject.add(new Objects("square", "Orange", "Small", 3));
-        
-        */
+
         AI testAI = new AI(pickedobjects);
         
         //TextView;
@@ -101,22 +95,6 @@ public class PlayActivity extends Activity
         
         
         tableLay = (TableLayout)findViewById(R.id.tableLayout1); 
-        
-//        final ImageButton button1 = new ImageButton(this);      
-//        button1.setImageResource(R.drawable.blue_circle);
-//        button1.setBackgroundColor(Color.WHITE);
-//        
-//        final ImageButton button2 = new ImageButton(this);      
-//        button2.setImageResource(R.drawable.red_triangle);
-//        button2.setBackgroundColor(Color.WHITE);
-//        
-//        final ImageButton button3 = new ImageButton(this);      
-//        button3.setImageResource(R.drawable.green_circle);
-//        button3.setBackgroundColor(Color.WHITE);
-//        
-//        final ImageButton button4 = new ImageButton(this);      
-//        button4.setImageResource(R.drawable.yellow_triangle);
-//        button4.setBackgroundColor(Color.WHITE);      
                 
         //diamond 4 objects = 3x3
         // 5 -> 8 = 5x5
@@ -147,8 +125,8 @@ public class PlayActivity extends Activity
                ImageButton button4 = new ImageButton(this);
                
                
-               colorString = color[random.nextInt(color.length)].toString();
-               shapeString = shape[random.nextInt(shape.length)].toString();                       
+               colorString = pickedobjects.get(0).getColor();
+               shapeString = pickedobjects.get(0).getShape();              
                                       
                objectString = colorString + "_" + shapeString;
 
@@ -161,41 +139,27 @@ public class PlayActivity extends Activity
               
               
                
-               colorString = pickedobjects.get(0).getColor();
-               shapeString = pickedobjects.get(0).getShape();
+               colorString = pickedobjects.get(1).getColor();
+               shapeString = pickedobjects.get(1).getShape();
                objectString = colorString + "_" + shapeString;
                
-               colorString = color[random.nextInt(color.length)].toString();
-               shapeString = shape[random.nextInt(shape.length)].toString();                       
-                                      
-               objectString = colorString + "_" + shapeString;
-
-               drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
+              drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
                button2.setImageResource(drawableID);
                
                
 
-               colorString = pickedobjects.get(0).getColor();
-               shapeString = pickedobjects.get(0).getShape();
-               objectString = colorString + "_" + shapeString;
-               
-               colorString = color[random.nextInt(color.length)].toString();
-               shapeString = shape[random.nextInt(shape.length)].toString();                       
-                                      
+               colorString = pickedobjects.get(2).getColor();
+               shapeString = pickedobjects.get(2).getShape();
+             
                objectString = colorString + "_" + shapeString;
 
                drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
                button3.setImageResource(drawableID);
                
-               colorString = pickedobjects.get(0).getColor();
-               shapeString = pickedobjects.get(0).getShape();
+               colorString = pickedobjects.get(3).getColor();
+               shapeString = pickedobjects.get(3).getShape();
                objectString = colorString + "_" + shapeString;
-             
-               
-               colorString = color[random.nextInt(color.length)].toString();
-               shapeString = shape[random.nextInt(shape.length)].toString();                       
-                                      
-               objectString = colorString + "_" + shapeString;
+
 
                drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
                button4.setImageResource(drawableID);
@@ -207,41 +171,9 @@ public class PlayActivity extends Activity
                tr2.addView(button3); 
                tr2.addView(button4); 
                
-//               ImageButton button2 = new ImageButton(this);
-//               
-//               colorString = pickedobjects.get(1).getColor();
-//               shapeString = pickedobjects.get(1).getShape();
-//               objectString = colorString + "_" + shapeString;
-//               
-//               button2.setImageResource(getImageId(this, objectString));
-//               
-//               tr1.addView(button2);
-               
-//               TableRow tr2 = new TableRow(this);   
-//               tr2.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
-//               
-//               ImageButton button3 = new ImageButton(this);
-//               
-//               colorString = pickedobjects.get(2).getColor();
-//               shapeString = pickedobjects.get(2).getShape();
-//               objectString = colorString + "_" + shapeString;
-//               
-//               button3.setImageResource(getImageId(this, objectString));
-//               
-//               ImageButton button4 = new ImageButton(this);
-//               
-//               colorString = pickedobjects.get(3).getColor();
-//               shapeString = pickedobjects.get(3).getShape();
-//               objectString = colorString + "_" + shapeString;
-//               
-//               button4.setImageResource(getImageId(this, objectString));
-//               
-//               tr2.addView(button3); 
-//               tr2.addView(button4);
                
                tableLay.addView(tr1);
                tableLay.addView(tr2);
-//               tableLay.addView(tr2);
                
         }
         else if(numOfObjects >= 5 || numOfObjects <= 9 )
@@ -402,16 +334,15 @@ public class PlayActivity extends Activity
         return result;
     }
     
-    public List<Objects> populateList(int num, String[] color, String size, String[] shape)
+    public void populateList(int num, String[] color, String size, String[] shape)
     {
     	Random r = new Random();
-    	for(int i = 0; i < num-1; i++)
+    	for(int i = 0; i < num; i++)
     	{    	  
     		int j = r.nextInt(color.length);
     		int k = r.nextInt(shape.length);
-    		pickedobjects.add(new Objects(size, color[j], shape[k], i));
-    	}
-    	return pickedobjects;
+    		pickedobjects.add(new Objects(shape[k], color[j], size, i));
+    	}    	
     }
     
     
