@@ -31,16 +31,7 @@ import android.widget.Toast;
 public class PlayActivity extends Activity
 {
     TableLayout tableLay;
-    private List<Objects> pickedobjects = new ArrayList<Objects>();
-    
-    static final String[] numbers = new String[] { 
-        "A", "B", "C", "D", "E",
-        "F", "G", "H", "I", "J",
-        "K", "L", "M", "N", "O",
-        "P", "Q", "R", "S", "T",
-        "U", "V", "W", "X", "Y", "Z",
-        "AA","BB","CC","DD","EE" };
-    
+    private List<Objects> pickedobjects = new ArrayList<Objects>();    
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -111,7 +102,6 @@ public class PlayActivity extends Activity
                 String shapeString = "";                
                 String objectString = "";
                 int drawableID;
-                Random random = new Random();
             
                TableRow tr1 = new TableRow(this);   
                tr1.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
@@ -256,7 +246,11 @@ public class PlayActivity extends Activity
         }
         
         result = new String[size];
-        
+      if(getIntent().getExtras().getString("green") != null);
+      {
+        result[currentIndex] = "green";
+        currentIndex++;
+      }
         if(getIntent().getExtras().getString("red") != null)
     	{
         	result[currentIndex] = "red";
@@ -267,11 +261,7 @@ public class PlayActivity extends Activity
         	result[currentIndex] = "blue";
         	currentIndex++;
         }
-        if(getIntent().getExtras().getString("green") != null);
-        {
-        	result[currentIndex] = "green";
-        	currentIndex++;
-        }
+
         if(getIntent().getExtras().getString("purple") != null)
         {
         	result[currentIndex] = "purple";
