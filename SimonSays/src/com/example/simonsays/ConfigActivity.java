@@ -132,18 +132,38 @@ public class ConfigActivity extends Activity
                     intent.putExtra("yellow", (String)yellow.getText());
                 }
                 //get layout
+                
+                String layoutText = "";
+                
+                
                 RadioGroup myRadioGroup = (RadioGroup)findViewById(R.id.radioGroup1);
-                int selected = myRadioGroup.getCheckedRadioButtonId();
-                RadioButton buttonSelected = (RadioButton)findViewById(selected);
-                String layoutText = (String) buttonSelected.getText();
-                               
+//                int selected = myRadioGroup.getCheckedRadioButtonId();
+//                RadioButton buttonSelected = (RadioButton)findViewById(selected);
+//                String layoutText = (String) buttonSelected.getText();
+//                               
+//                intent.putExtra("layout", layoutText);
+                
+                
+                
+                switch(myRadioGroup.getCheckedRadioButtonId()) 
+                {
+                    case R.id.radio0:       
+                        layoutText = "diamond";
+                            break;
+                    case R.id.radio1:
+                        layoutText = "grid";
+                            break;
+                }
+                
                 intent.putExtra("layout", layoutText);
                 
                 //get object size
-                Spinner mySpinner2 = (Spinner)findViewById(R.id.spinner2);
+                Spinner mySpinner2 = (Spinner)findViewById(R.id.spinner2);              
                 String spinText2 = mySpinner2.getSelectedItem().toString();
+              
                 
-                intent.putExtra("objectSize",spinText2);
+                
+                intent.putExtra("objectSize", spinText2);                              
                 //start
                 startActivity(intent);
             }//end of onCLick

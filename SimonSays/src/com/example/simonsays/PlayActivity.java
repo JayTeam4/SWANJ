@@ -57,7 +57,8 @@ public class PlayActivity extends Activity
         
         int numOfObjects = Integer.parseInt(getIntent().getExtras().getString("numOfObjects"));
         String[] color = getColors();
-        String size = getIntent().getExtras().getString("objectSize");
+        String size = (String) getIntent().getExtras().get("objectSize");
+       // String size = getIntent().getExtras().getString("objectSize");
         String[] shape = getShapes();
         populateList(numOfObjects, color, size, shape);
         Score score = new Score(numOfObjects);
@@ -70,14 +71,15 @@ public class PlayActivity extends Activity
 //        testAI.addNewShapeToList();
 //        testAI.addNewShapeToList();
 //        testAI.addNewShapeToList();      
-        
-        if(getIntent().getExtras().getString("layout") == "grid")
+//        
+        if(getIntent().getExtras().getString("layout").contains("grid"))
         {
-            Grid g = new Grid();
+            Grid g = new Grid(pickedobjects,numOfObjects,this);
+            g.createGrid();
         }
-        if(getIntent().getExtras().getString("layout") == "diamond")
+        if(getIntent().getExtras().getString("layout").contains("diamond"))
         {
-            Diamond d = new Diamond();
+            Diamond d = new Diamond(pickedobjects);
         }
 //        4 = 2x2
 //        5 -> 9 = 3x3
@@ -95,89 +97,7 @@ public class PlayActivity extends Activity
         // 21 -> 24 = 13x13
         // 25 = special case 13x13 1 in middle
        
-        //grid                 
-        if(numOfObjects == 4)
-        {
-                String colorString = "";
-                String shapeString = "";                
-                String objectString = "";
-                int drawableID;
-            
-               TableRow tr1 = new TableRow(this);   
-               tr1.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
-               
-               TableRow tr2= new TableRow(this);   
-               tr2.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
-                                           
-               ImageButton button1 = new ImageButton(this);
-               ImageButton button2 = new ImageButton(this);
-               ImageButton button3 = new ImageButton(this);
-               ImageButton button4 = new ImageButton(this);
-               
-               
-               colorString = pickedobjects.get(0).getColor();
-               shapeString = pickedobjects.get(0).getShape();              
-                                      
-               objectString = colorString + "_" + shapeString;
-
-               drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
-               button1.setImageResource(drawableID);
-               
-              // button1.setImageResource(resID);    
-               
-            
-              
-              
-               
-               colorString = pickedobjects.get(1).getColor();
-               shapeString = pickedobjects.get(1).getShape();
-               objectString = colorString + "_" + shapeString;
-               
-              drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
-               button2.setImageResource(drawableID);
-               
-               
-
-               colorString = pickedobjects.get(2).getColor();
-               shapeString = pickedobjects.get(2).getShape();
-             
-               objectString = colorString + "_" + shapeString;
-
-               drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
-               button3.setImageResource(drawableID);
-               
-               colorString = pickedobjects.get(3).getColor();
-               shapeString = pickedobjects.get(3).getShape();
-               objectString = colorString + "_" + shapeString;
-
-
-               drawableID = getResources().getIdentifier(objectString, "drawable", getPackageName());
-               button4.setImageResource(drawableID);
-               
-              
-               
-               tr1.addView(button1); 
-               tr1.addView(button2); 
-               tr2.addView(button3); 
-               tr2.addView(button4); 
-               
-               
-               tableLay.addView(tr1);
-               tableLay.addView(tr2);
-               
-        }
-        else if(numOfObjects >= 5 || numOfObjects <= 9 )
-        {
-           
-        }
-        else if(numOfObjects >= 10 || numOfObjects <= 16)
-        {
-                  
-        }
-        else
-        {
-                    
-        }
+       
 
 //        button1.setOnClickListener(new OnClickListener()
 //        {
@@ -228,7 +148,7 @@ public class PlayActivity extends Activity
         {
         	size++;
         }
-        if(getIntent().getExtras().getString("green") != null);
+        if(getIntent().getExtras().getString("green") != null)
         {
         	size++;
         }
@@ -246,11 +166,7 @@ public class PlayActivity extends Activity
         }
         
         result = new String[size];
-      if(getIntent().getExtras().getString("green") != null);
-      {
-        result[currentIndex] = "green";
-        currentIndex++;
-      }
+
         if(getIntent().getExtras().getString("red") != null)
     	{
         	result[currentIndex] = "red";
@@ -277,7 +193,11 @@ public class PlayActivity extends Activity
         	result[currentIndex] = "yellow";
         	currentIndex++;
         }
-        
+        if(getIntent().getExtras().getString("green") != null)
+        {
+          result[currentIndex] = "green";
+          currentIndex++;
+        }        
     	return result;
     }
     

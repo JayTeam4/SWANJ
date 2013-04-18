@@ -10,11 +10,21 @@
 //            	 
 package com.example.simonsays;
 
+import java.util.List;
+
 /**
  * @author Jay Lewis
  *
  */
 public class Diamond extends Layout
 {
+
+    /**
+     * @param pickedobjects
+     */
+    public Diamond(List<Objects> pickedobjects)
+    {
+        // TODO Auto-generated constructor stub
+    }
 
 }//end of class
