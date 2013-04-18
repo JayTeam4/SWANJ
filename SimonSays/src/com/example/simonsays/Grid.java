@@ -46,7 +46,6 @@ public class Grid extends Layout
         
         TableLayout tableLay;
         tableLay = (TableLayout)activity.findViewById(R.id.tableLayout1);   
-        TableLayout.LayoutParams tl = new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);       
         
         //grid    
         String colorString = "";
@@ -82,7 +81,6 @@ public class Grid extends Layout
             buttonArray[i].setImageResource(drawableID);
             
             final int oldDrawableID = drawableID;
-            final String oldObjectString = objectString;
             
             buttonArray[i].setBackgroundColor(0xfff3f3f3);
             buttonArray[i].setScaleType(ScaleType.FIT_XY);   
@@ -93,13 +91,10 @@ public class Grid extends Layout
               @Override
               public void onClick(View v) 
               {
-                 // oldDrawableID = activity.getResources().getIdentifier(oldObjectString, "drawable", activity.getPackageName());
-                  //next line is the color / shape you want to change to immediatly after click
                   String newShape = selectedObjects.get(k).getShape();  
                   String newColor = "black";
                   String newobjectString = newColor + "_" + newShape;
                   
-
                   int newdrawableID = activity.getResources().getIdentifier(newobjectString, "drawable", activity.getPackageName());
                   buttonArray[k].setImageResource(newdrawableID);
                                     

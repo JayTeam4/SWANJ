@@ -79,45 +79,10 @@ public class PlayActivity extends Activity
         }
         if(getIntent().getExtras().getString("layout").contains("diamond"))
         {
-            Diamond d = new Diamond(pickedobjects);
+            Diamond d = new Diamond(pickedobjects,numOfObjects,this);
+            d.createDiamond();
         }
 
-        
-        
-        tableLay = (TableLayout)findViewById(R.id.tableLayout1); 
-                
-        //diamond 4 objects = 3x3
-        // 5 -> 8 = 5x5
-        // 9 -> 12 = 7x7
-        // 13 -> 16 = 9x9
-        // 17 -> 20 = 11x11
-        // 21 -> 24 = 13x13
-        // 25 = special case 13x13 1 in middle
-       
-       
-
-//        button1.setOnClickListener(new OnClickListener()
-//        {
-//            
-//            @Override
-//            public void onClick(View v) 
-//            {
-//                //next line is the color / shape you want to change to immediatly after click
-//                button1.setImageResource(R.drawable.black_circle);
-//                // SLEEP 2 SECONDS HERE ...
-//                Handler handler = new Handler(); 
-//                handler.postDelayed(new Runnable() 
-//                { 
-//                     public void run() 
-//                     { 
-//                         //this is what the image will return to after the seconds has executed
-//                         button1.setImageResource(R.drawable.blue_circle); 
-//                     } 
-//                }, 500); 
-//            }
-//        }        
-//                );     
-        
     }// end of onCreate
     public static int getImageId(Context context, String imageName) 
     {        
