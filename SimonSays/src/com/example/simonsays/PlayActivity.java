@@ -81,10 +81,7 @@ public class PlayActivity extends Activity
         {
             Diamond d = new Diamond(pickedobjects);
         }
-//        4 = 2x2
-//        5 -> 9 = 3x3
-//        10 -> 16 = 4x4
-//        17 -> 25 = 5x5
+
         
         
         tableLay = (TableLayout)findViewById(R.id.tableLayout1); 
