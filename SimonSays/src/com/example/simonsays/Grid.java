@@ -85,7 +85,6 @@ public class Grid extends Layout
             buttonArray[i].setBackgroundColor(0xfff3f3f3);
             buttonArray[i].setScaleType(ScaleType.FIT_XY);   
             buttonArray[i].setId(i);
-            
             buttonArray[i].setOnClickListener(new OnClickListener()
           {              
               @Override
@@ -168,7 +167,8 @@ public class Grid extends Layout
                                                        
                tableLay.addView(tr[0]);
                tableLay.addView(tr[1]);
-               tableLay.addView(tr[2]);               
+               tableLay.addView(tr[2]);  
+               
         }
         else if(numObjects == 10 || 
                 numObjects == 11 ||
