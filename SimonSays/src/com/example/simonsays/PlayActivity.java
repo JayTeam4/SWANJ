@@ -31,7 +31,8 @@ import android.widget.Toast;
 public class PlayActivity extends Activity
 {
     TableLayout tableLay;
-    private List<Objects> pickedobjects = new ArrayList<Objects>();    
+    private List<Objects> pickedobjects = new ArrayList<Objects>();  
+    private ImageButton[] currentButtons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -64,7 +65,7 @@ public class PlayActivity extends Activity
         Score score = new Score(numOfObjects);
         Player player = new Player(getIntent().getExtras().getString("user"), score);
 
-        AI testAI = new AI(pickedobjects);
+        AI testAI = new AI(pickedobjects, this);
         
         //TextView;
         
@@ -76,12 +77,17 @@ public class PlayActivity extends Activity
         {
             Grid g = new Grid(pickedobjects,numOfObjects,this);
             g.createGrid();
+            setcurrentButtons(g.getButtons());
         }
         if(getIntent().getExtras().getString("layout").contains("diamond"))
         {
             Diamond d = new Diamond(pickedobjects,numOfObjects,this);
             d.createDiamond();
+            setcurrentButtons(d.getButtons());
         }
+        testAI.setbuttons(currentButtons);
+        testAI.addNewButtonToPattern();
+        testAI.showPattern();
 
     }// end of onCreate
     public static int getImageId(Context context, String imageName) 
@@ -215,6 +221,11 @@ public class PlayActivity extends Activity
     		int k = r.nextInt(shape.length);
     		pickedobjects.add(new Objects(shape[k], color[j], size, i));
     	}    	
+    }
+    
+    public void setcurrentButtons(ImageButton[] ibarray)
+    {
+    	currentButtons = ibarray;
     }
     
     

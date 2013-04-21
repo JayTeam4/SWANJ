@@ -34,12 +34,14 @@ public class Diamond extends Layout
     private List<Objects> selectedObjects;
     private int numObjects;
     private Activity activity;
+    private final ImageButton[] buttonArray;
     
     Diamond(List<Objects> pickedobjects, int numOfObjects, Activity act)
     {
         selectedObjects = pickedobjects;
         numObjects = numOfObjects;
         activity = act;
+        buttonArray = new ImageButton[numObjects];
     }
     public void createDiamond()
     {
@@ -73,7 +75,7 @@ public class Diamond extends Layout
               sizeNum = 100;
         }
         int drawableID;
-        final ImageButton[] buttonArray = new ImageButton[numObjects];
+//        final ImageButton[] buttonArray = new ImageButton[numObjects];
         for (int i = 0; i < numObjects; i++)
         {
             final int k = i;
@@ -771,10 +773,10 @@ public class Diamond extends Layout
     /**
      * @param pickedobjects
      */
-    public Diamond(List<Objects> pickedobjects)
-    {
-        // TODO Auto-generated constructor stub
-    }
+//    public Diamond(List<Objects> pickedobjects)
+//    {
+//        // TODO Auto-generated constructor stub
+//    }
 
     /**
      * @return the selectedObjects
@@ -807,5 +809,10 @@ public class Diamond extends Layout
     {
         this.activity = activity;
     }       
+    
+    public ImageButton[] getButtons()
+    {
+    	return buttonArray;
+    }
 
 }//end of class

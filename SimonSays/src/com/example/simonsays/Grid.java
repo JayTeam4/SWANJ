@@ -24,17 +24,20 @@ import com.example.simonsays.PlayActivity;
  * @author Jay Lewis
  *
  */
+
 public class Grid extends Layout
 {
     private List<Objects> selectedObjects;
     private int numObjects;
     private Activity activity;
+    private final ImageButton[] buttonArray;
     
     Grid(List<Objects> pickedobjects, int numOfObjects, Activity act)
     {
         selectedObjects = pickedobjects;
         numObjects = numOfObjects;
         activity = act;
+        buttonArray = new ImageButton[numObjects];
     }
     
     public void createGrid()
@@ -65,7 +68,7 @@ public class Grid extends Layout
               sizeNum = 100;
         }
         int drawableID;
-        final ImageButton[] buttonArray = new ImageButton[numObjects];
+       // buttonArray = new ImageButton[numObjects];
 
         for (int i = 0; i < numObjects; i++)
         {
@@ -352,6 +355,10 @@ public class Grid extends Layout
         this.activity = activity;
     }
     
+    public ImageButton[] getButtons()
+    {
+    	return buttonArray;
+    }
     
     
     
