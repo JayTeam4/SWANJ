@@ -6,8 +6,8 @@
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
     <item name="android:background">@android:color/white</item>
-  	<!--  <item name="android:windowBackground">@android:color/white</item> -->
   	<item name="android:colorBackground">@android:color/white</item>
+  	<item name="@android:style/Theme.NoTitleBar"></item>
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -18,8 +18,8 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
      <item name="android:background">@android:color/white</item>
- 	<!-- <item name="android:windowBackground">@android:color/white</item>  -->
  	 <item name="android:colorBackground">@android:color/white</item>
+ 	 <item name="@android:style/Theme.NoTitleBar"></item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 

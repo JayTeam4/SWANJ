@@ -41,21 +41,26 @@ public final class R {
         public static final int green_triangle=0x7f02000a;
         public static final int ic_cheetah=0x7f02000b;
         public static final int ic_launcher=0x7f02000c;
-        public static final int ic_simon_says=0x7f02000d;
-        public static final int orange_circle=0x7f02000e;
-        public static final int orange_square=0x7f02000f;
-        public static final int orange_triangle=0x7f020010;
-        public static final int purple_circle=0x7f020011;
-        public static final int purple_square=0x7f020012;
-        public static final int purple_triangle=0x7f020013;
-        public static final int red_circle=0x7f020014;
-        public static final int red_square=0x7f020015;
-        public static final int red_triangle=0x7f020016;
-        public static final int square=0x7f020017;
-        public static final int triangle=0x7f020018;
-        public static final int yellow_circle=0x7f020019;
-        public static final int yellow_square=0x7f02001a;
-        public static final int yellow_triangle=0x7f02001b;
+        public static final int ic_simon=0x7f02000d;
+        public static final int ic_simon2=0x7f02000e;
+        public static final int ic_simon_says=0x7f02000f;
+        public static final int ic_simone1=0x7f020010;
+        public static final int ic_simonsays2=0x7f020011;
+        public static final int ic_test=0x7f020012;
+        public static final int orange_circle=0x7f020013;
+        public static final int orange_square=0x7f020014;
+        public static final int orange_triangle=0x7f020015;
+        public static final int purple_circle=0x7f020016;
+        public static final int purple_square=0x7f020017;
+        public static final int purple_triangle=0x7f020018;
+        public static final int red_circle=0x7f020019;
+        public static final int red_square=0x7f02001a;
+        public static final int red_triangle=0x7f02001b;
+        public static final int square=0x7f02001c;
+        public static final int triangle=0x7f02001d;
+        public static final int yellow_circle=0x7f02001e;
+        public static final int yellow_square=0x7f02001f;
+        public static final int yellow_triangle=0x7f020020;
     }
     public static final class id {
         public static final int Button02=0x7f0a0019;
@@ -140,12 +145,6 @@ public final class R {
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
  API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 

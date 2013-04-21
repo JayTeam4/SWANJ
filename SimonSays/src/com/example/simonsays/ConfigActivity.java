@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,7 +26,9 @@ public class ConfigActivity extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
-    {        
+    {       
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_screen);
         TextView tvUserName = (TextView) findViewById(R.id.textView2);
