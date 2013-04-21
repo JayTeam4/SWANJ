@@ -1,4 +1,4 @@
-            	 
+                 
 package com.example.simonsays;
 
 import java.util.List;
@@ -357,7 +357,7 @@ public class Grid extends Layout
     
     public ImageButton[] getButtons()
     {
-    	return buttonArray;
+        return buttonArray;
     }
     
     

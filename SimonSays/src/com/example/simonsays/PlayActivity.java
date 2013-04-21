@@ -105,127 +105,127 @@ public class PlayActivity extends Activity
     
     private String[] getColors()
     {
-    	String[] result;
-    	int size = 0;
-    	int currentIndex = 0;
-    	if(getIntent().getExtras().getString("red") != null)
-    	{
-    		size++;
-    	}
+        String[] result;
+        int size = 0;
+        int currentIndex = 0;
+        if(getIntent().getExtras().getString("red") != null)
+        {
+            size++;
+        }
         if(getIntent().getExtras().getString("blue") != null)
         {
-        	size++;
+            size++;
         }
         if(getIntent().getExtras().getString("green") != null)
         {
-        	size++;
+            size++;
         }
         if(getIntent().getExtras().getString("purple") != null)
         {
-        	size++;
+            size++;
         }
         if(getIntent().getExtras().getString("orange") != null)
         {
-        	size++;
+            size++;
         }
         if(getIntent().getExtras().getString("yellow") != null)
         {
-        	size++;
+            size++;
         }
         
         result = new String[size];
 
         if(getIntent().getExtras().getString("red") != null)
-    	{
-        	result[currentIndex] = "red";
-    		currentIndex++;
-    	}
+        {
+            result[currentIndex] = "red";
+            currentIndex++;
+        }
         if(getIntent().getExtras().getString("blue") != null)
         {
-        	result[currentIndex] = "blue";
-        	currentIndex++;
+            result[currentIndex] = "blue";
+            currentIndex++;
         }
 
         if(getIntent().getExtras().getString("purple") != null)
         {
-        	result[currentIndex] = "purple";
-        	currentIndex++;
+            result[currentIndex] = "purple";
+            currentIndex++;
         }
         if(getIntent().getExtras().getString("orange") != null)
         {
-        	result[currentIndex] = "orange";
-        	currentIndex++;
+            result[currentIndex] = "orange";
+            currentIndex++;
         }
         if(getIntent().getExtras().getString("yellow") != null)
         {
-        	result[currentIndex] = "yellow";
-        	currentIndex++;
+            result[currentIndex] = "yellow";
+            currentIndex++;
         }
         if(getIntent().getExtras().getString("green") != null)
         {
           result[currentIndex] = "green";
           currentIndex++;
         }        
-    	return result;
+        return result;
     }
     
     private String[] getShapes()
     {
-    	String[] result;
-    	int size = 0;
-    	int currentIndex = 0;
-    	if(getIntent().getExtras().getString("square") != null)
-    	{
-    		size++;
-    	}
-    	
-    	if(getIntent().getExtras().getString("triangle") != null)
-    	{
-    		size++;
-    	}
-    	
-    	if(getIntent().getExtras().getString("circle") != null)
-    	{
-    		size++;
-    	}
-    	
-    	result = new String[size];
-        
+        String[] result;
+        int size = 0;
+        int currentIndex = 0;
         if(getIntent().getExtras().getString("square") != null)
-    	{
-        	result[currentIndex] = "square";
-    		currentIndex++;
-    	}
+        {
+            size++;
+        }
         
         if(getIntent().getExtras().getString("triangle") != null)
-    	{
-        	result[currentIndex] = "triangle";
-    		currentIndex++;
-    	}
+        {
+            size++;
+        }
         
         if(getIntent().getExtras().getString("circle") != null)
-    	{
-        	result[currentIndex] = "circle";
-    		currentIndex++;
-    	}
+        {
+            size++;
+        }
+        
+        result = new String[size];
+        
+        if(getIntent().getExtras().getString("square") != null)
+        {
+            result[currentIndex] = "square";
+            currentIndex++;
+        }
+        
+        if(getIntent().getExtras().getString("triangle") != null)
+        {
+            result[currentIndex] = "triangle";
+            currentIndex++;
+        }
+        
+        if(getIntent().getExtras().getString("circle") != null)
+        {
+            result[currentIndex] = "circle";
+            currentIndex++;
+        }
         
         return result;
     }
     
     public void populateList(int num, String[] color, String size, String[] shape)
     {
-    	Random r = new Random();
-    	for(int i = 0; i < num; i++)
-    	{    	  
-    		int j = r.nextInt(color.length);
-    		int k = r.nextInt(shape.length);
-    		pickedobjects.add(new Objects(shape[k], color[j], size, i));
-    	}    	
+        Random r = new Random();
+        for(int i = 0; i < num; i++)
+        {         
+            int j = r.nextInt(color.length);
+            int k = r.nextInt(shape.length);
+            pickedobjects.add(new Objects(shape[k], color[j], size, i));
+        }       
     }
     
     public void setcurrentButtons(ImageButton[] ibarray)
     {
-    	currentButtons = ibarray;
+        currentButtons = ibarray;
     }
     
     

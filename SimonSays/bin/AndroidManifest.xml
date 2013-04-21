@@ -17,6 +17,7 @@
         <activity
             android:name="com.example.simonsays.MainActivity"
             android:label="@string/app_name" >
+            android:background= "@color/white">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +27,12 @@
         <activity
             android:name="com.example.simonsays.ConfigActivity"
             android:label="@string/app_name" >
+            android:background= "@color/white">
         </activity>
         <activity
             android:name="com.example.simonsays.PlayActivity"
             android:label="@string/title_activity_play" >
+            android:background= "@color/white">
         </activity>
     </application>
 
