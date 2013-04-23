@@ -91,7 +91,9 @@ public class PlayActivity extends Activity
         }
         testAI.setbuttons(currentButtons);
         testAI.addNewButtonToPattern();
-        testAI.showPattern();
+        testAI.addNewButtonToPattern();
+        testAI.addNewButtonToPattern();
+        testAI.addNewButtonToPattern();
 
     }// end of onCreate
     public static int getImageId(Context context, String imageName) 

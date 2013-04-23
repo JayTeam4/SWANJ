@@ -1,12 +1,15 @@
 package com.example.simonsays;
 import android.R.integer;
 import android.app.Activity;
+import android.app.AlertDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.os.SystemClock;
 import android.widget.ImageButton;
 
 public class AI {
@@ -53,12 +56,32 @@ public class AI {
         Random r = new Random();
         int i = r.nextInt(buttonsOnScreen.length);
         pattern[currentround] = buttonsOnScreen[i];
+        addRound();
+        alertbox("Are you ready!", "GO");
     }
     
     public void showPattern()
     {
-        int i = 0;
-        activity.findViewById(buttonsOnScreen[i].getId()).performClick();
+        for(int i = 0; i<currentround; i++)
+        {
+        	if(pattern[i] == null )
+        		break;
+        	activity.findViewById(pattern[i].getId()).performClick();
+        }
+    }
+    
+    protected void alertbox(String title, String mymessage)
+    {
+	    new AlertDialog.Builder(activity)
+	       .setMessage(mymessage)
+	       .setTitle(title)
+	       .setPositiveButton("GO",
+	          new DialogInterface.OnClickListener() {
+	          public void onClick(DialogInterface dialog, int whichButton){
+	        	  showPattern();
+	          }
+	          })
+	       .show();
     }
 
 }
