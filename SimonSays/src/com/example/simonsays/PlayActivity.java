@@ -96,57 +96,38 @@ public class PlayActivity extends Activity
         }
         testAI.setbuttons(currentButtons);
         
-//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-//				this);
-//        // set title
-//		alertDialogBuilder.setTitle("Your Title");
-//
-//		// set dialog message
-//		alertDialogBuilder
-//			.setMessage("Click yes to exit!")
-//			.setCancelable(false)
-//			.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
-//				public void onClick(DialogInterface dialog,int id) {
-//					// if this button is clicked, close
-//					// current activity
-//					testAI.setContinue(false);
-//					Handler handler = new Handler();
-//					handler.postDelayed(new Runnable() {	
-//						@Override
-//						public void run() {
-//							// TODO Auto-generated method stub
-//							testAI.addNewButtonToPattern();
-//						}
-//					}, 3000);
-//				}
-//			  });
-//		// create alert dialog
-//		AlertDialog alertDialog = alertDialogBuilder.create();
-		//Handler handler = new Handler();
-        try {
-			Thread.sleep(200);
-			//testAI.addNewButtonToPattern();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-        for(int y = 0; y<25; y++)
-        { 
-//        	final int k = y;
-//    	    Handler handler = new Handler();
-//            handler.postDelayed(new Runnable()
-//            {
-//                
-//                @Override
-//                public void run()
-//                {
-//                	testAI.addNewButtonToPattern();
-//                    
-//                }
-//            }, 5000*y); 
-        	testAI.addNewButtonToPattern();
-        	testAI.checkUserInput();
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+				this);
+        // set title
+		alertDialogBuilder.setTitle("Your Title");
+
+		// set dialog message
+		alertDialogBuilder
+			.setMessage("Are you Ready?!")
+			.setCancelable(false)
+			.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					// if this button is clicked, close
+					// current activity
+					testAI.setContinue(false);
+					Handler handler = new Handler();
+					handler.postDelayed(new Runnable() {	
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+						    testAI.playGame();
+							
+						}
+					}, 3000);
+				}
+			  });
+		// create alert dialog
+		AlertDialog alertDialog = alertDialogBuilder.create();
+		alertDialog.show();
+//        	testAI.addNewButtonToPattern();
+//        	testAI.checkUserInput();
     			
-        }
+        
 
     }// end of onCreate
     public static int getImageId(Context context, String imageName) 

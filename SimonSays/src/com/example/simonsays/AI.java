@@ -90,7 +90,8 @@ public class AI {
         }
     }
     
-    private void showButtonAt(int i) {
+    private void showButtonAt(int i) 
+    {
     	activity.findViewById(pattern[i].getId()).performClick();
 	}
 
@@ -141,6 +142,21 @@ public class AI {
 			//if()
 		}
 		
+	}
+	public void playGame()
+	{
+	    addNewButtonToPattern();
+	    showPattern();
+	    
+	    boolean gameFailed = false;
+	    
+	    while(gameFailed != true)
+	    {
+	        
+	    }
+	    
+	    
+	    
 	}
 
 

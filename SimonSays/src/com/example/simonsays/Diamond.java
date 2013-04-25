@@ -118,7 +118,7 @@ public class Diamond extends Layout
                            
                            buttonArray[k].setImageResource(oldDrawableID); 
                        } 
-                  }, 500); 
+                  }, 1000); 
               }
           }        
                   );

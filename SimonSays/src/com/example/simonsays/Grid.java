@@ -109,6 +109,7 @@ public class Grid extends Layout
                            //this is what the image will return to after the seconds has executed
                            
                            buttonArray[k].setImageResource(oldDrawableID); 
+                           
                        } 
                   }, 1000); 
               }
