@@ -74,7 +74,7 @@ public class PlayActivity extends Activity
         Score score = new Score(numOfObjects);
         Player player = new Player(getIntent().getExtras().getString("user"), score);
 
-        final AI testAI = new AI(pickedobjects, this);
+       // final AI testAI = new AI(pickedobjects, this);
         
         //TextView;
         
@@ -84,48 +84,116 @@ public class PlayActivity extends Activity
 //        
         if(getIntent().getExtras().getString("layout").contains("grid"))
         {
-            Grid g = new Grid(pickedobjects,numOfObjects,this);
-            g.createGrid();
+            
+            
+            Layout g = new Grid(pickedobjects,numOfObjects,this);
+          //  g.createLayout();
             setcurrentButtons(g.getButtons());
+            
+            final AI testAI = new AI(pickedobjects, this, g);
+            
+            testAI.setbuttons(currentButtons);
+            
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    this);
+            // set title
+            alertDialogBuilder.setTitle("Your Title");
+
+            // set dialog message
+            alertDialogBuilder
+                .setMessage("Are you Ready?!")
+                .setCancelable(false)
+                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, close
+                        // current activity
+                        testAI.setContinue(false);
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {    
+                            @Override
+                            public void run() {
+                                // TODO Auto-generated method stub
+                                testAI.playGame();
+                                
+                            }
+                        }, 1000);
+                    }
+                  });
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
         }
         if(getIntent().getExtras().getString("layout").contains("diamond"))
         {
             Diamond d = new Diamond(pickedobjects,numOfObjects,this);
-            d.createDiamond();
+            d.createLayout();
             setcurrentButtons(d.getButtons());
-        }
-        testAI.setbuttons(currentButtons);
-        
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-				this);
-        // set title
-		alertDialogBuilder.setTitle("Your Title");
+            
+            final AI testAI = new AI(pickedobjects, this, d);
+            
+            testAI.setbuttons(currentButtons);
+            
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    this);
+            // set title
+            alertDialogBuilder.setTitle("Your Title");
 
-		// set dialog message
-		alertDialogBuilder
-			.setMessage("Are you Ready?!")
-			.setCancelable(false)
-			.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog,int id) {
-					// if this button is clicked, close
-					// current activity
-					testAI.setContinue(false);
-					Handler handler = new Handler();
-					handler.postDelayed(new Runnable() {	
-						@Override
-						public void run() {
-							// TODO Auto-generated method stub
-						    testAI.playGame();
-							
-						}
-					}, 3000);
-				}
-			  });
-		// create alert dialog
-		AlertDialog alertDialog = alertDialogBuilder.create();
-		alertDialog.show();
-//        	testAI.addNewButtonToPattern();
-//        	testAI.checkUserInput();
+            // set dialog message
+            alertDialogBuilder
+                .setMessage("Are you Ready?!")
+                .setCancelable(false)
+                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, close
+                        // current activity
+                        testAI.setContinue(false);
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {    
+                            @Override
+                            public void run() {
+                                // TODO Auto-generated method stub
+                                testAI.playGame();
+                                
+                            }
+                        }, 3000);
+                    }
+                  });
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
+//        testAI.setbuttons(currentButtons);
+//        
+//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//				this);
+//        // set title
+//		alertDialogBuilder.setTitle("Your Title");
+//
+//		// set dialog message
+//		alertDialogBuilder
+//			.setMessage("Are you Ready?!")
+//			.setCancelable(false)
+//			.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+//				public void onClick(DialogInterface dialog,int id) {
+//					// if this button is clicked, close
+//					// current activity
+//					testAI.setContinue(false);
+//					Handler handler = new Handler();
+//					handler.postDelayed(new Runnable() {	
+//						@Override
+//						public void run() {
+//							// TODO Auto-generated method stub
+//						    testAI.playGame();
+//							
+//						}
+//					}, 3000);
+//				}
+//			  });
+//		// create alert dialog
+//		AlertDialog alertDialog = alertDialogBuilder.create();
+//		alertDialog.show();
+////        	testAI.addNewButtonToPattern();
+////        	testAI.checkUserInput();
     			
         
 

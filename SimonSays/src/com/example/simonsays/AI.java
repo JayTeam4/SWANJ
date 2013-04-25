@@ -1,5 +1,6 @@
 package com.example.simonsays;
 import android.R.integer;
+import android.R.layout;
 import android.app.Activity;
 import android.app.AlertDialog;
 
@@ -24,13 +25,15 @@ public class AI {
     private ImageButton[] buttonsOnScreen;
     private ImageButton[] pattern = new ImageButton[100];
     private Boolean cont = true;
+    private Layout lay;
     
-    AI(List<Objects> myList, Activity act)
+    AI(List<Objects> myList, Activity act, Layout g)
     {
         allObjects = myList;
         currentround = 0;
         currentlist = new ArrayList<Objects>();
         activity = act;
+        lay = g;
     }
     
     public void addRound()
@@ -85,7 +88,7 @@ public class AI {
                         activity.findViewById(pattern[k].getId()).performClick();
                         
                     }
-                }, 2000*i); 
+                }, 3000*i); 
         	}
         }
     }
@@ -145,14 +148,27 @@ public class AI {
 	}
 	public void playGame()
 	{
-	    addNewButtonToPattern();
-	    showPattern();
+	    lay.createLayout();
+
 	    
 	    boolean gameFailed = false;
 	    
 	    while(gameFailed != true)
 	    {
+	        addNewButtonToPattern();
+	        showPattern();
 	        
+	        int i = 0;
+	        for (ImageButton ib: lay.getPlayerSequence())
+            {
+              if(ib.getId() != pattern[i].getId())
+              {
+                  gameFailed = true;
+                  Toast.makeText(activity.getApplicationContext(), "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
+              }
+            }
+	       
+
 	    }
 	    
 	    
