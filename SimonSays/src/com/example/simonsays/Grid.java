@@ -110,7 +110,7 @@ public class Grid extends Layout
                            
                            buttonArray[k].setImageResource(oldDrawableID); 
                        } 
-                  }, 5000); 
+                  }, 1000); 
               }
           }        
                   );

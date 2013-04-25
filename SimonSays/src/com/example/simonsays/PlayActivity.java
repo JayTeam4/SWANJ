@@ -4,12 +4,17 @@ package com.example.simonsays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+
 import com.example.simonsays.R.layout;
 import android.os.Bundle;
 import android.os.Handler;
 import android.R.integer;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.Menu;
@@ -69,7 +74,7 @@ public class PlayActivity extends Activity
         Score score = new Score(numOfObjects);
         Player player = new Player(getIntent().getExtras().getString("user"), score);
 
-        AI testAI = new AI(pickedobjects, this);
+        final AI testAI = new AI(pickedobjects, this);
         
         //TextView;
         
@@ -90,10 +95,58 @@ public class PlayActivity extends Activity
             setcurrentButtons(d.getButtons());
         }
         testAI.setbuttons(currentButtons);
-        testAI.addNewButtonToPattern();
-        testAI.addNewButtonToPattern();
-        testAI.addNewButtonToPattern();
-        testAI.addNewButtonToPattern();
+        
+//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//				this);
+//        // set title
+//		alertDialogBuilder.setTitle("Your Title");
+//
+//		// set dialog message
+//		alertDialogBuilder
+//			.setMessage("Click yes to exit!")
+//			.setCancelable(false)
+//			.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+//				public void onClick(DialogInterface dialog,int id) {
+//					// if this button is clicked, close
+//					// current activity
+//					testAI.setContinue(false);
+//					Handler handler = new Handler();
+//					handler.postDelayed(new Runnable() {	
+//						@Override
+//						public void run() {
+//							// TODO Auto-generated method stub
+//							testAI.addNewButtonToPattern();
+//						}
+//					}, 3000);
+//				}
+//			  });
+//		// create alert dialog
+//		AlertDialog alertDialog = alertDialogBuilder.create();
+		//Handler handler = new Handler();
+        try {
+			Thread.sleep(200);
+			//testAI.addNewButtonToPattern();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+        for(int y = 0; y<25; y++)
+        { 
+//        	final int k = y;
+//    	    Handler handler = new Handler();
+//            handler.postDelayed(new Runnable()
+//            {
+//                
+//                @Override
+//                public void run()
+//                {
+//                	testAI.addNewButtonToPattern();
+//                    
+//                }
+//            }, 5000*y); 
+        	testAI.addNewButtonToPattern();
+        	testAI.checkUserInput();
+    			
+        }
 
     }// end of onCreate
     public static int getImageId(Context context, String imageName) 

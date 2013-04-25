@@ -6,11 +6,15 @@ import android.app.AlertDialog;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.os.Handler;
 import android.os.SystemClock;
+import android.widget.Checkable;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class AI {
     private List<Objects> allObjects;
@@ -18,7 +22,8 @@ public class AI {
     private Activity activity;
     private int currentround;
     private ImageButton[] buttonsOnScreen;
-    private ImageButton[] pattern = new ImageButton[1000];
+    private ImageButton[] pattern = new ImageButton[100];
+    private Boolean cont = true;
     
     AI(List<Objects> myList, Activity act)
     {
@@ -56,8 +61,9 @@ public class AI {
         Random r = new Random();
         int i = r.nextInt(buttonsOnScreen.length);
         pattern[currentround] = buttonsOnScreen[i];
+        //pattern[currentround].setId(buttonsOnScreen[i].getId());
         addRound();
-        alertbox("Are you ready!", "GO");
+        showPattern();
     }
     
     public void showPattern()
@@ -66,22 +72,76 @@ public class AI {
         {
         	if(pattern[i] == null )
         		break;
-        	activity.findViewById(pattern[i].getId()).performClick();
+        	else
+        	{
+        	    final int k = i;
+        	    Handler handler = new Handler();
+                handler.postDelayed(new Runnable()
+                {
+                    
+                    @Override
+                    public void run()
+                    {
+                        activity.findViewById(pattern[k].getId()).performClick();
+                        
+                    }
+                }, 2000*i); 
+        	}
         }
     }
     
-    protected void alertbox(String title, String mymessage)
+    private void showButtonAt(int i) {
+    	activity.findViewById(pattern[i].getId()).performClick();
+	}
+
+	public void disableButtonsExcept(int exception)
     {
-	    new AlertDialog.Builder(activity)
-	       .setMessage(mymessage)
-	       .setTitle(title)
-	       .setPositiveButton("GO",
-	          new DialogInterface.OnClickListener() {
-	          public void onClick(DialogInterface dialog, int whichButton){
-	        	  showPattern();
-	          }
-	          })
-	       .show();
+    	for(int i = 0; i < buttonsOnScreen.length; i++)
+    	{
+    		if(i != exception)
+    		{
+    			buttonsOnScreen[i].setActivated(false);
+    		}
+    		else {
+    			buttonsOnScreen[i].setActivated(true);
+			}
+    	}
     }
+    
+    public void disableButtons()
+    {
+    	for(int i = 0; i < buttonsOnScreen.length; i++)
+    	{
+    		
+    		buttonsOnScreen[i].setActivated(false);
+    	}
+    }
+    
+    public void enableButtons()
+    {
+    	for(int i = 0; i < buttonsOnScreen.length; i++)
+    	{
+    		
+    		buttonsOnScreen[i].setActivated(true);
+    	}
+    }
+    
+    public void setContinue(Boolean set)
+    {
+    	cont = set;
+    }
+    public Boolean getContinue()
+    {
+    	return cont;
+    }
+
+	public void checkUserInput() {
+		for(int i = 0; i<currentround; i++)
+		{
+			//if()
+		}
+		
+	}
+
 
 }
