@@ -87,7 +87,7 @@ public class PlayActivity extends Activity
             
             
             Layout g = new Grid(pickedobjects,numOfObjects,this);
-          //  g.createLayout();
+            //g.createLayout();
             setcurrentButtons(g.getButtons());
             
             final AI testAI = new AI(pickedobjects, this, g);

@@ -149,27 +149,42 @@ public class AI {
 	public void playGame()
 	{
 	    lay.createLayout();
-	    addNewButtonToPattern();
-        showPattern();
+	    //addNewButtonToPattern();
+        //showPattern();
 
 	    
 	    boolean gameFailed = false;
 	    Toast.makeText(activity.getApplicationContext(), "You Mest Up", Toast.LENGTH_LONG).show();
-//	    do
-//        {
-//	        addNewButtonToPattern();
-//            showPattern();
-//            
-//            int i = 0;
-//            for (Integer ib: lay.getPlayerSequence())
-//            {
-//              if(ib != pattern[i].getId())
-//              {
-//                  gameFailed = true;
-//                  Toast.makeText(activity.getApplicationContext(), "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
-//              }
-//            }
-//        } while (gameFailed!= true);
+	    do
+        {
+	        addNewButtonToPattern();
+            //showPattern();
+            int numberOfButtonsUserHasPressed = 0;
+	        while(numberOfButtonsUserHasPressed <= currentround)
+            {
+	        	if(lay.getPlayerSequence().get(numberOfButtonsUserHasPressed) != null)
+	        	{
+	        		if(lay.getPlayerSequence().get(numberOfButtonsUserHasPressed) == pattern[numberOfButtonsUserHasPressed].getId())
+	        		{
+	        			numberOfButtonsUserHasPressed++;
+	        		}
+	        		else {
+						gameFailed = true;
+						break;
+					}
+	        	}
+//	        	int i = 0;
+//	            for (Integer ib: lay.getPlayerSequence())
+//	            {
+//	            	
+//	              if(lay.getPlayerSequence().get(ib) == pattern[i].getId())
+//	              {
+//	                  gameFailed = true;
+//	                  Toast.makeText(activity.getApplicationContext(), "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
+//	              }
+//	            }
+            }
+        } while (gameFailed!= true);
 	    
 	   
 	    

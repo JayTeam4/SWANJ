@@ -1,6 +1,7 @@
         	 
 package com.example.simonsays;
 
+import java.util.List;
 import java.util.Set;
 
 import android.widget.ImageButton;
@@ -12,7 +13,7 @@ import android.widget.ImageButton;
 abstract class Layout
 {
     int numberOfObjects;
-    Set<Integer> playerSequence;
+    List<Integer> playerSequence;
     int getNumberOfObjects()
     {
         return this.numberOfObjects;
@@ -22,7 +23,7 @@ abstract class Layout
     {       
         
     }
-    public Set<Integer> getPlayerSequence()
+    public List<Integer> getPlayerSequence()
     {
         return playerSequence;
                 

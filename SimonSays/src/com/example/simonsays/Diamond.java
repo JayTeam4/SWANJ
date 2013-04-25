@@ -10,6 +10,7 @@
 //            	 
 package com.example.simonsays;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -35,7 +36,7 @@ import com.example.simonsays.PlayActivity;
  */
 public class Diamond extends Layout
 {
-    private Set<Integer> playerSequence;
+    private List<Integer> playerSequence;
     private List<Objects> selectedObjects;
     private int numObjects;
     private Activity activity;
@@ -47,6 +48,7 @@ public class Diamond extends Layout
         numObjects = numOfObjects;
         activity = act;
         buttonArray = new ImageButton[numObjects];
+        playerSequence = new ArrayList<Integer>();
     }
     public void createLayout()
     {
@@ -1545,7 +1547,7 @@ public class Diamond extends Layout
     {
     	return buttonArray;
     }
-    public Set<Integer> getPlayerSequence()
+    public List<Integer> getPlayerSequence()
     {
         return playerSequence;
                 

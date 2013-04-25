@@ -1,9 +1,11 @@
                  
 package com.example.simonsays;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import android.R.integer;
 import android.R.layout;
 import android.app.Activity;
 import android.graphics.Color;
@@ -28,7 +30,7 @@ import com.example.simonsays.PlayActivity;
 
 public class Grid extends Layout
 {
-    Set<Integer> playerSequence;
+    List<Integer> playerSequence;
     private List<Objects> selectedObjects;
     private int numObjects;
     private Activity activity;
@@ -40,6 +42,7 @@ public class Grid extends Layout
         numObjects = numOfObjects;
         activity = act;
         buttonArray = new ImageButton[numObjects];
+        playerSequence = new ArrayList<Integer>();
     }
     public void createLayout()
     {
@@ -631,14 +634,14 @@ public class Grid extends Layout
     {
         return buttonArray;
     }
-    public Set<Integer> getPlayerSequence()
+    public List<Integer> getPlayerSequence()
     {
         return playerSequence;
                 
     }
     public void addToSequence(Integer i)
     {
-        this.playerSequence.add(i);
+        playerSequence.add(i);
     }
     
     
