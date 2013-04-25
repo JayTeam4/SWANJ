@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 abstract class Layout
 {
     int numberOfObjects;
-    Set<ImageButton> playerSequence;
+    Set<Integer> playerSequence;
     int getNumberOfObjects()
     {
         return this.numberOfObjects;
@@ -22,12 +22,12 @@ abstract class Layout
     {       
         
     }
-    public Set<ImageButton> getPlayerSequence()
+    public Set<Integer> getPlayerSequence()
     {
         return playerSequence;
                 
     }
-    public void addToSequence(ImageButton ib)
+    public void addToSequence(Integer ib)
     {
         playerSequence.add(ib);
     }

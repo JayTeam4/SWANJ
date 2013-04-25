@@ -35,7 +35,7 @@ import com.example.simonsays.PlayActivity;
  */
 public class Diamond extends Layout
 {
-    private Set<ImageButton> playerSequence;
+    private Set<Integer> playerSequence;
     private List<Objects> selectedObjects;
     private int numObjects;
     private Activity activity;
@@ -1545,12 +1545,12 @@ public class Diamond extends Layout
     {
     	return buttonArray;
     }
-    public Set<ImageButton> getPlayerSequence()
+    public Set<Integer> getPlayerSequence()
     {
         return playerSequence;
                 
     }
-    public void addToSequence(ImageButton ib)
+    public void addToSequence(Integer ib)
     {
         playerSequence.add(ib);
     }

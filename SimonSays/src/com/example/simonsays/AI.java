@@ -149,27 +149,29 @@ public class AI {
 	public void playGame()
 	{
 	    lay.createLayout();
+	    addNewButtonToPattern();
+        showPattern();
 
 	    
 	    boolean gameFailed = false;
+	    Toast.makeText(activity.getApplicationContext(), "You Mest Up", Toast.LENGTH_LONG).show();
+//	    do
+//        {
+//	        addNewButtonToPattern();
+//            showPattern();
+//            
+//            int i = 0;
+//            for (Integer ib: lay.getPlayerSequence())
+//            {
+//              if(ib != pattern[i].getId())
+//              {
+//                  gameFailed = true;
+//                  Toast.makeText(activity.getApplicationContext(), "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
+//              }
+//            }
+//        } while (gameFailed!= true);
 	    
-	    while(gameFailed != true)
-	    {
-	        addNewButtonToPattern();
-	        showPattern();
-	        
-	        int i = 0;
-	        for (ImageButton ib: lay.getPlayerSequence())
-            {
-              if(ib.getId() != pattern[i].getId())
-              {
-                  gameFailed = true;
-                  Toast.makeText(activity.getApplicationContext(), "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
-              }
-            }
-	       
-
-	    }
+	   
 	    
 	    
 	    

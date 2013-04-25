@@ -28,7 +28,7 @@ import com.example.simonsays.PlayActivity;
 
 public class Grid extends Layout
 {
-    private Set<ImageButton> playerSequence;
+    Set<Integer> playerSequence;
     private List<Objects> selectedObjects;
     private int numObjects;
     private Activity activity;
@@ -100,6 +100,8 @@ public class Grid extends Layout
                   
                   int newdrawableID = activity.getResources().getIdentifier(newobjectString, "drawable", activity.getPackageName());
                   buttonArray[k].setImageResource(newdrawableID);
+                  playerSequence.add(buttonArray[k].getId());
+                  addToSequence(buttonArray[k].getId());
                                     
                   // SLEEP 2 SECONDS HERE ...
                   Handler handler = new Handler(); 
@@ -110,7 +112,6 @@ public class Grid extends Layout
                            //this is what the image will return to after the seconds has executed
                            
                            buttonArray[k].setImageResource(oldDrawableID); 
-                           addToSequence(buttonArray[k]);
                        } 
                   }, 1000); 
               }
@@ -361,6 +362,7 @@ public class Grid extends Layout
               @Override
               public void onClick(View v) 
               {
+                  playerSequence.add(buttonArray[k].getId());
                   String newShape = selectedObjects.get(k).getShape();  
                   String newColor = "black";
                   String newobjectString = newColor + "_" + newShape;
@@ -375,8 +377,9 @@ public class Grid extends Layout
                        public void run() 
                        { 
                            //this is what the image will return to after the seconds has executed
-                           
+                          
                            buttonArray[k].setImageResource(oldDrawableID); 
+                           
                            
                        } 
                   }, 1000); 
@@ -628,14 +631,14 @@ public class Grid extends Layout
     {
         return buttonArray;
     }
-    public Set<ImageButton> getPlayerSequence()
+    public Set<Integer> getPlayerSequence()
     {
         return playerSequence;
                 
     }
-    public void addToSequence(ImageButton ib)
+    public void addToSequence(Integer i)
     {
-        playerSequence.add(ib);
+        this.playerSequence.add(i);
     }
     
     
