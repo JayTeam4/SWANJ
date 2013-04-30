@@ -1,5 +1,5 @@
          	 
-package com.example.simonsays;
+package com.example.simonsays.model;
 
 /**
  * @author Jay Lewis
@@ -11,7 +11,7 @@ public class Score
     private int totalObjects;
     private long time;
     
-    Score(int totObjects)
+    public Score(int totObjects)
     {
         numberOfRounds = 0;
         time = 0;

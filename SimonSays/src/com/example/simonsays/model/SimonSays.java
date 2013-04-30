@@ -1,5 +1,5 @@
            	 
-package com.example.simonsays;
+package com.example.simonsays.model;
 
 /**
  * @author Jay Lewis

@@ -8,7 +8,7 @@
 //  Purpose        :  
 //                    
 //            	 
-package com.example.simonsays;
+package com.example.simonsays.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,11 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TableLayout.LayoutParams;
-import com.example.simonsays.PlayActivity;
+
+import com.example.simonsays.R;
+import com.example.simonsays.R.drawable;
+import com.example.simonsays.R.id;
+import com.example.simonsays.android.view.PlayActivity;
 /**
  * @author Jay Lewis
  *
@@ -42,7 +46,7 @@ public class Diamond extends Layout
     private Activity activity;
     private final ImageButton[] buttonArray;
     
-    Diamond(List<Objects> pickedobjects, int numOfObjects, Activity act)
+    public Diamond(List<Objects> pickedobjects, int numOfObjects, Activity act)
     {
         selectedObjects = pickedobjects;
         numObjects = numOfObjects;
@@ -114,6 +118,7 @@ public class Diamond extends Layout
 
                   int newdrawableID = activity.getResources().getIdentifier(newobjectString, "drawable", activity.getPackageName());
                   buttonArray[k].setImageResource(newdrawableID);
+                  addToSequence(buttonArray[k].getId());
                                     
                   // SLEEP 2 SECONDS HERE ...
                   Handler handler = new Handler(); 
@@ -840,6 +845,7 @@ public class Diamond extends Layout
 
                   int newdrawableID = activity.getResources().getIdentifier(newobjectString, "drawable", activity.getPackageName());
                   buttonArray[k].setImageResource(newdrawableID);
+                  addToSequence(buttonArray[k].getId());
                                     
                   // SLEEP 2 SECONDS HERE ...
                   Handler handler = new Handler(); 
@@ -1555,6 +1561,11 @@ public class Diamond extends Layout
     public void addToSequence(Integer ib)
     {
         playerSequence.add(ib);
+    }
+    
+    public void setSequence(List<Integer> newArray)
+    {
+    	playerSequence = newArray;
     }
 
 }//end of class

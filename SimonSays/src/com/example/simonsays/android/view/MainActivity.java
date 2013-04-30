@@ -1,7 +1,12 @@
-package com.example.simonsays;
+package com.example.simonsays.android.view;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.simonsays.R;
+import com.example.simonsays.R.id;
+import com.example.simonsays.R.layout;
+import com.example.simonsays.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;

@@ -1,19 +1,21 @@
         	 
-package com.example.simonsays;
+package com.example.simonsays.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import android.app.Activity;
 import android.widget.ImageButton;
 
 /**
  * @author Jay Lewis
  *
  */
-abstract class Layout
+abstract public class Layout extends Activity
 {
     int numberOfObjects;
-    List<Integer> playerSequence;
+    List<Integer> playerSequence = new ArrayList<Integer>();
     int getNumberOfObjects()
     {
         return this.numberOfObjects;
@@ -32,9 +34,14 @@ abstract class Layout
     {
         playerSequence.add(ib);
     }
-    ImageButton[] getButtons()
+    public ImageButton[] getButtons()
     {
         // TODO Auto-generated method stub
         return null;
+    }
+    
+    public void setSequence(List<Integer> newArray)
+    {
+    	playerSequence = newArray;
     }
 }//end of class

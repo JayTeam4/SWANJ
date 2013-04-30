@@ -1,5 +1,5 @@
         	 
-package com.example.simonsays;
+package com.example.simonsays.model;
 
 
 /**
@@ -13,7 +13,7 @@ public class Objects
     private String size;
     private int number;
     
-    Objects(String sh, String co, String si, int num)
+    public Objects(String sh, String co, String si, int num)
     {
     	shape = sh;
     	color = co;

@@ -1,5 +1,5 @@
                  
-package com.example.simonsays;
+package com.example.simonsays.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,10 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TableLayout.LayoutParams;
-import com.example.simonsays.PlayActivity;
+
+import com.example.simonsays.R;
+import com.example.simonsays.R.id;
+import com.example.simonsays.android.view.PlayActivity;
 
 
 
@@ -30,13 +33,13 @@ import com.example.simonsays.PlayActivity;
 
 public class Grid extends Layout
 {
-    List<Integer> playerSequence;
+    List<Integer> playerSequence = new ArrayList<Integer>();
     private List<Objects> selectedObjects;
     private int numObjects;
     private Activity activity;
     private final ImageButton[] buttonArray;
     
-    Grid(List<Objects> pickedobjects, int numOfObjects, Activity act)
+    public Grid(List<Objects> pickedobjects, int numOfObjects, Activity act)
     {
         selectedObjects = pickedobjects;
         numObjects = numOfObjects;
@@ -103,7 +106,7 @@ public class Grid extends Layout
                   
                   int newdrawableID = activity.getResources().getIdentifier(newobjectString, "drawable", activity.getPackageName());
                   buttonArray[k].setImageResource(newdrawableID);
-                  playerSequence.add(buttonArray[k].getId());
+                  //playerSequence.add(buttonArray[k].getId());
                   addToSequence(buttonArray[k].getId());
                                     
                   // SLEEP 2 SECONDS HERE ...
@@ -642,6 +645,11 @@ public class Grid extends Layout
     public void addToSequence(Integer i)
     {
         playerSequence.add(i);
+    }
+    
+    public void setSequence(List<Integer> newArray)
+    {
+    	playerSequence = newArray;
     }
     
     

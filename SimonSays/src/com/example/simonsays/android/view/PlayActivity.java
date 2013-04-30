@@ -1,4 +1,6 @@
-package com.example.simonsays;
+package com.example.simonsays.android.view;
+import com.example.simonsays.R;
+import com.example.simonsays.controller.*;
 
 
 import java.util.ArrayList;
@@ -7,6 +9,15 @@ import java.util.Random;
 import java.util.Timer;
 
 import com.example.simonsays.R.layout;
+import com.example.simonsays.R.menu;
+import com.example.simonsays.controller.SimonSayscontroller;
+import com.example.simonsays.model.Diamond;
+import com.example.simonsays.model.Grid;
+import com.example.simonsays.model.Layout;
+import com.example.simonsays.model.Objects;
+import com.example.simonsays.model.Player;
+import com.example.simonsays.model.Score;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.R.integer;
@@ -87,10 +98,10 @@ public class PlayActivity extends Activity
             
             
             Layout g = new Grid(pickedobjects,numOfObjects,this);
-            //g.createLayout();
+            g.createLayout();
             setcurrentButtons(g.getButtons());
             
-            final AI testAI = new AI(pickedobjects, this, g);
+            final SimonSayscontroller testAI = new SimonSayscontroller(pickedobjects, this, g);
             
             testAI.setbuttons(currentButtons);
             
@@ -125,11 +136,11 @@ public class PlayActivity extends Activity
         }
         if(getIntent().getExtras().getString("layout").contains("diamond"))
         {
-            Diamond d = new Diamond(pickedobjects,numOfObjects,this);
+            final Diamond d = new Diamond(pickedobjects,numOfObjects,this);
             d.createLayout();
             setcurrentButtons(d.getButtons());
             
-            final AI testAI = new AI(pickedobjects, this, d);
+            final SimonSayscontroller testAI = new SimonSayscontroller(pickedobjects, this, d);
             
             testAI.setbuttons(currentButtons);
             
@@ -146,14 +157,11 @@ public class PlayActivity extends Activity
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, close
                         // current activity
-                        testAI.setContinue(false);
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {    
                             @Override
                             public void run() {
-                                // TODO Auto-generated method stub
-                                testAI.playGame();
-                                
+                         	   testAI.playGame();                                
                             }
                         }, 3000);
                     }
@@ -334,6 +342,11 @@ public class PlayActivity extends Activity
     public void setcurrentButtons(ImageButton[] ibarray)
     {
         currentButtons = ibarray;
+    }
+    
+    public ImageButton[] getCurrentButtons()
+    {
+    	return currentButtons;
     }
     
     

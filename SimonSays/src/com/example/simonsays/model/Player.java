@@ -1,5 +1,6 @@
         	 
-package com.example.simonsays;
+package com.example.simonsays.model;
+
 
 /**
  * @author Jay Lewis
@@ -15,7 +16,7 @@ public class Player
     {
         return playerName;
     }//end of getName
-    Player(String name, Score myScore)
+    public Player(String name, Score myScore)
     {
         playerName = name;    
         playerScore = myScore;
