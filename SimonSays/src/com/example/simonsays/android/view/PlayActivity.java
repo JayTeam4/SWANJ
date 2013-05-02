@@ -118,7 +118,7 @@ public class PlayActivity extends Activity
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, close
                         // current activity
-                        testAI.setContinue(false);
+                        //testAI.setContinue(false);
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {    
                             @Override
@@ -157,13 +157,25 @@ public class PlayActivity extends Activity
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, close
                         // current activity
-                        Handler handler = new Handler();
-                        handler.postDelayed(new Runnable() {    
+//                    	testAI.playGame();
+//                        Handler handler = new Handler();
+//                        handler.postDelayed(new Runnable() {    
+//                            @Override
+//                            public void run() {
+//                         	   testAI.playGame();                                
+//                            }
+//                        }, 3000);
+                        
+                        Runnable run = new Runnable() {    
                             @Override
                             public void run() {
                          	   testAI.playGame();                                
                             }
-                        }, 3000);
+                        };
+                        
+                        Handler handler = new Handler();
+                        handler.postDelayed(run, 3000);
+                        
                     }
                   });
             // create alert dialog

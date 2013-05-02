@@ -19,6 +19,7 @@ import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
+import android.util.Log;
 import android.widget.Checkable;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -33,8 +34,9 @@ public class SimonSayscontroller {
     private Boolean cont = true;
     private Layout lay;
     private int gameFailed = 0;
+    private int numberOfButtonsUserHasPressed = 0;
     private Thread gameThread;
-    private Boolean resume = false;
+    //private volatile Boolean resume = false;
     private Boolean addNewButton = true;
     private Boolean checkInput = false;
     
@@ -86,7 +88,7 @@ public class SimonSayscontroller {
         pattern[currentround] = buttonsOnScreen[i];
         //pattern[currentround].setId(buttonsOnScreen[i].getId());
         addRound();
-        showPattern();
+        //showPattern();
     }
     
     public void showPattern()
@@ -111,14 +113,13 @@ public class SimonSayscontroller {
 			        	//Toast.makeText(activity, "in", Toast.LENGTH_LONG);
 			            activity.findViewById(pattern[k].getId()).performClick();
 			        	lay.setSequence(holder);
-			        	if(k == currentround-1)
-			        		setCheckInput(true);
     	    		}
     			};
     			
+    			
 	        	Handler handler = new Handler();
-    	    	//handler.postDelayed(run, 3000*k);
-	        	handler.post(run);
+    	    	handler.postDelayed(run, 1000*k);
+//	        	handler.post(run);
     		}
     	}
 
@@ -185,30 +186,34 @@ public class SimonSayscontroller {
 //				e.printStackTrace();
 //			}
 //		}
-		checkInput = false;
-		Handler handler = new Handler();
-    	handler.post(new Runnable() {
-    		@Override
-    		public void run(){
-    			int numberOfButtonsUserHasPressed = 0;
-    			while(numberOfButtonsUserHasPressed< currentround)
+		//checkInput = false;
+//		Handler handler = new Handler();
+//    	Runnable newRunnable = new Runnable() {
+//    		@Override
+//    		public void run(){
+//    			while(numberOfButtonsUserHasPressed< currentround)
     	        {
     	        	if(lay.getPlayerSequence().size() > numberOfButtonsUserHasPressed)
     	        	{
     	        		if(lay.getPlayerSequence().get(numberOfButtonsUserHasPressed) == pattern[numberOfButtonsUserHasPressed].getId())
     	        		{
     	        			numberOfButtonsUserHasPressed++;
+    	        			if(numberOfButtonsUserHasPressed < pattern.length)
+    	        			{
+    	        				addNewButton = true;
+    	        				checkInput = false;
+    	        				numberOfButtonsUserHasPressed = 0;
+    	        			}
     	        		}
     	        		else {
     	        			//Toast.makeText(activity.getApplicationContext(), "You Mest Up", Toast.LENGTH_LONG).show();
     	        			gameFailed++;
-    	        			break;
     					}
     	        	}
     	        }
-    			addNewButton = true;
-    		}
-    	});
+//    		}
+//    	};
+//    	handler.post(newRunnable);
 //		int numberOfButtonsUserHasPressed = 0;
 //		while(numberOfButtonsUserHasPressed< currentround)
 //        {
@@ -242,23 +247,29 @@ public class SimonSayscontroller {
 //	    		checkUserInput();
 //	    }
 	    
-	    Runnable run = new Runnable() {
-    		@Override
-    		public void run(){
+//	    Runnable run = new Runnable() {
+//    		@Override
+//    		public void run(){
     			gameFailed = 0;
-    		    while(gameFailed == 0)
+    		    //while(gameFailed == 0)
+    			//Looper.prepare();
+    			//while(gameFailed == 0)
     		    {
-    		    	if(addNewButton)
+    		    	//if(addNewButton)
     		    		addNewButtonToPattern();
-    		    	if(checkInput)
-    		    		checkUserInput();
+    		    		addNewButtonToPattern();
+    		    		addNewButtonToPattern();
+    		    		showPattern();
+    		    	//if(checkInput)
+    		    		//checkUserInput();
     		    }
-    		}
-		};
+    		    //	Looper.loop();
+//    		}
+//		};
 		
-    	Handler handler = new Handler();
-    	//handler.postDelayed(run, 3000*k);
-    	handler.post(run);
+//    	Handler handler = new Handler();
+//    	//handler.postDelayed(run, 3000*k);
+//    	handler.post(run);
 	    
 	    
 	    //Looper myloop = new Looper();
